@@ -170,6 +170,80 @@
       "where_to_stay":"Hotel Boutique Amatechan, Hotel Vieja Europa",
       "where_to_eat":"Pupusódromo Parque Balboa, Frida Cocina Mexicana",
       "safety_tips":"Informate sobre horarios y actividades, llevar ropa abrigada."
+    },
+    
+     //Detalles de lugares de La Libertad
+    {
+      "place_id": 22,
+      "direction": "Desde San Salvador, toma la carretera al puerto de La Libertad, luego el bypass Camino a Surf City, y sigue al occidente por la carretera Litoral, hasta el kilómetro 43. Un arco de madera indica que has llegado a una de las capitales mundiales del surf.",
+      "best_season_to_go": "Durante todo el año",
+      "where_to_stay": "Hotel Mirasuft & waves",
+      "where_to_eat": "Rock & Roe Fish Shop",
+      "safety_tips": "visitar durante la mañana ya que la marea no es muy turbulenta, nadar en áreas seguras, hidrátate y usa bloqueador y respetar el medio ambiente."
+    },
+    {
+      "place_id": 23,
+      "direction": "Desde la carretera Panamericana desde San Salvador en dirección a Santa Tecla. Luego, sigue las señales hacia el Volcán de San Salvador. Continúa por la Calle al Boquerón, que te llevará hasta la entrada del parque, ubicado en la cima del volcán. El trayecto dura aproximadamente 30-40 minutos desde San Salvador.",
+      "best_season_to_go": "Durante todo el año",
+      "where_to_stay": "Hotel Villa Antigua",
+      "where_to_eat": "Café del Volcán",
+      "safety_tips": "Es recomendable llegar temprano para disfrutar mejor las vistas y realizar caminatas sin prisa, llevar siempre agua para hidratarse bien."
+    },
+    {
+      "place_id": 24,
+      "direction": "Para llegar toma la Carretera del Litoral (CA-2) desde San Salvador en dirección al Puerto de La Libertad. El trayecto es de unos 30 a 45 minutos en auto, una vez en La Libertad, sigue las señales hacia las playas principales como El Tunco o El Zonte, que forman parte de Surf City.",
+      "best_season_to_go": "Durante todo el año",
+      "where_to_stay": "Hotel AST surf",
+      "where_to_eat": "Olor de Mar",
+      "safety_tips": "Mantenerse informado, tener precaución al nadar y mantenerse hidratado y protegido del sol."
+    },
+    {
+      "place_id": 25,
+      "direction": "se encuentra en el cantón Hacienda San Diego, Km 55, Calle a Comalapa, La Libertad, El Salvador. Para llegar, puedes tomar la carretera a Comalapa desde San Salvador, que te llevará directamente hacia el parque. La señalización es clara y hay acceso desde diferentes puntos de La Libertad.",
+      "best_season_to_go": "Enero - Noviembre",
+      "where_to_stay": "Boca Olas Resort Villas",
+      "where_to_eat": "Café Don Pedro",
+      "safety_tips": "Es recomendable ir desde la mañana, siempre manternse informado por cualquier percanse, hidratarse bien."
+    },
+    {
+      "place_id": 26,
+      "direction": "Tomar la carretera  del Litoral (CA-2) desde San Salvador hacia el oeste. La playa está aproximadamente a 35 kilómetros de la capital, lo que equivale a un trayecto de unos 40 a 50 minutos en auto.",
+      "best_season_to_go": "Durante todo el año",
+      "where_to_stay": "Rancho Las Brisas",
+      "where_to_eat": "Restaurante Playa del Pulpo",
+      "safety_tips": "informase de los horarios, no alejarse de las areas ya establecidas y mantener limpia la playa."
+    },
+    {
+      "place_id": 27,
+      "direction": "Llegar a El Zonte es fácil, desde San Salvador toma la carretera al Puerto de La Libertad, incorpórate después al bypass Camino a Surf City, y al llegar a la carretera Litoral, sigue hacia el occidente hasta el kilometro 53, donde la señalización te indicará que has arribado",
+      "best_season_to_go": "Durante todo el año",
+      "where_to_stay": "Hotel Palo Verde",
+      "where_to_eat": "El Vikingo",
+      "safety_tips": "Tener precaución al nadar, informa a alguien sobre tus planes, mantenerse hidratado y protegido del sol y mantente informado sobre cualquier cambio en la marea" 
+    },
+    {
+      "place_id": 28,
+      "direction": "toma la Carretera del Litoral (CA-2) desde San Salvador. El trayecto es de aproximadamente 35 kilómetros, que se recorren en unos 40 minutos en auto. Al llegar, encontrarás un ambiente costero con acceso a diversas playas y un malecón encantador.",
+      "best_season_to_go": "Durante todo el año",
+      "where_to_stay": "Hotel Los Farallones",
+      "where_to_eat": "Restaurante Acajutla",
+      "safety_tips": "Llevar algun tipo de gorra o visera y usar bloqueador solar, utilizar transporte confiable y Mantenerse informado." 
+    },
+    {
+      "place_id": 29,
+      "direction": "Tomar la carretera CA-2 desde San Salvador hacia el oeste. Luego, dirígete hacia la carretera que conecta con el cantón de Tamique, que está aproximadamente a 30 kilómetros de distancia y puede tomarte alrededor de 45 minutos en automóvil.",
+      "best_season_to_go": "Durante todo el año",
+      "where_to_stay": "Atami Escape Resort",
+      "where_to_eat": "Beto's",
+      "safety_tips": "Se sugiere contactar a la unidad de turismo al llegar al parque central de Tamanique, donde te proporcionarán un guía que te acompañará en la aventura." 
+    },
+    {
+      "place_id": 30,
+      "direction": "Tomar a Carretera del Litoral (CA-2) desde San Salvador hacia el oeste. Después de aproximadamente 40 minutos y 35 kilómetros, encontrarás señales que te guiarán hacia Playa San Blas.",
+      "best_season_to_go": "Durante todo el año",
+      "where_to_stay": "Sabas Beach Resort",
+      "where_to_eat": "La Dolce Vita",
+      "safety_tips": "Evitar zonas solitarias, vigilar las pertenencias, informarse sobre le clima y consulta  a los locales." 
     }
   ]
   

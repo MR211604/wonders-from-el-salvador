@@ -150,5 +150,71 @@
       "name":"Parque Balboa",
       "location":"https://maps.app.goo.gl/rmJWPdDb1HwRLy379",
       "description":"El parque Balboa es el escape perfecto para conectar inmediatamente con la naturaleza. Además de ser considerado parte de las principales reservas ecológicas de El Salvador."
+    },
+
+  //Lugares turisticos de La Libertad
+    {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"El Tunco",
+      "location":"https://maps.app.goo.gl/ecXVngyFEansCzbX7",
+      "description":"Hermoso paisaje con aguas cálidas del pacífico, Grandes olas que atraen a surfistas de todo el mundo y tambien para disfrutar en familia."
+    },
+
+    {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Parque Nacional EL Boqueron",
+      "location":"https://maps.app.goo.gl/kpkGXcH6ZBrrg1CF9",
+      "description":"Un lugar único para disfrutar y contemplar la naturaleza y disfruta con amigos y familiares."
+    },
+    {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Surf City",
+      "location":"https://maps.app.goo.gl/PWBzy37uPSrJPtbh6",
+      "description":"Un Hermoso lugar con un parque de atracciones, combina el encanto de la costa salvadoreña con desarrollo turístico de calidad."
+    },
+    {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Parque Nacional Walter Thilo Deininger",
+      "location":"https://maps.app.goo.gl/W89cFHFUrXznepxcA",
+      "description":"Este parque es perfecto para los amantes de la naturaleza y el senderismo. Cuenta con senderos que atraviesan bosques tropicales y permiten observar una gran diversidad de flora y fauna"
+    },
+    {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Playa San Diego",
+      "location":"https://maps.app.goo.gl/RgiWE5Z1KMA6ebTUA",
+      "description":"Una de las mejores playas que he conocido. Propia para el descanso, la relajación y el surf. Cuenta con una diversidad de lugares que se adaptan fácilmente al presupuesto de cada visitante."
+    },
+    {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Playa El Zonte",
+      "location":"https://maps.app.goo.gl/hU6fx7GoQZtTHeJf6",
+      "description":"La zona contigua al río El Zonte ofrece numerosos hostales, casas de alquiler, hoteles y restaurantes, al igual que rentas de tablas de surf y clases de este deporte."
+    },
+    {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Pueblo de La Libertad",
+      "location":"https://maps.app.goo.gl/GATuwXwyypdi1hcC8",
+      "description":"Es un encantador destino costero en El Salvador, conocido por su ambiente relajado y vibrante. Con un hermoso malecón y playas cercanas, como El Tunco y El Zonte, es popular entre surfistas y turistas."
+    },
+    {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Tamanique",
+      "location":"https://maps.app.goo.gl/J4rBeYXurTRWrgJt9",
+      "description":"Este pequeño pueblo en las montañas es conocido por las cascadas de Tamanique. Es un excelente lugar para hacer caminatas y nadar en las refrescantes pozas naturales."
+    },
+    {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Playa San Blas",
+      "location":"https://maps.app.goo.gl/HFHkd8Pu2VxDF94e8",
+      "description":"Menos concurrida que otras playas, San Blas es ideal para quienes buscan un lugar más tranquilo para nadar y disfrutar de la tranquilidad del mar."
     }
 ]
