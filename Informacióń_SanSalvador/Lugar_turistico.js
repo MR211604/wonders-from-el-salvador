@@ -216,5 +216,56 @@
       "name":"Playa San Blas",
       "location":"https://maps.app.goo.gl/HFHkd8Pu2VxDF94e8",
       "description":"Menos concurrida que otras playas, San Blas es ideal para quienes buscan un lugar más tranquilo para nadar y disfrutar de la tranquilidad del mar."
-    }
-]
+    }, 
+  //Lugares turisticos de Cuscatlán 
+  {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Teatro Alejandro Cotto",
+"location":"
+"description":"El teatro Alejandro Cotto es un espacio para la reflexión y la promoción de la cultura salvadoreña, y un homenaje a Cotto, quien contribuyó significativamente al desarrollo del cine y la cultura en el país.",
+},
+  {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Suchitoto",
+"location":"
+"description":"Es uno de los destinos turísticos más destacados del país, conocido por su riqueza histórica, su encanto colonial y su entorno natural.",
+},
+  {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Parqueo Nativo Ecolodge",
+"location":"
+"description":"Se trata de un espacio diseñado para ofrecer una experiencia en contacto con la naturaleza, ideal para quienes buscan relajarse y disfrutar de la tranquilidad del entorno.",
+},
+  {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Lago Suchitlán",
+"location":"
+"description":"El Lago Suchitlán es el cuerpo de agua más grande de El Salvador, creado artificialmente en 1976 tras la construcción de la Central Hidroeléctrica del Cerrón Grande. Ubicado en la región norte del país, entre los departamentos de Chalatenango, Cuscatlán, Cabañas y San Salvador, el lago cubre aproximadamente 135 km².",
+},
+  {
+  {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Casa Museo de Alejandro Cotto",
+"location":"
+"description":"La casa, construida con un estilo colonial, es un reflejo del gusto y la visión artística de Cotto, conservando mobiliario, obras de arte, libros y recuerdos personales que reflejan su vida y su contribución al arte y la cultura de El Salvador.",
+},
+  {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Cascada Los Tercios",
+"location":"
+"description":"El lugar es ideal para quienes disfrutan del senderismo y el ecoturismo, ya que se encuentra rodeado de vegetación. La caminata hacia la cascada es relativamente fácil y no requiere equipo especializado, lo que lo hace accesible para la mayoría de los visitantes.",
+},
+  {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Centro Arte Para La Paz",
+"location":"
+"description":"es un espacio cultural que se centra en la promoción del arte y la paz. Este centro tiene como objetivo fomentar la creatividad y el desarrollo personal a través de diversas actividades artísticas, talleres y eventos culturales.",
+},
+  
