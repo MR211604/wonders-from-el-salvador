@@ -137,45 +137,58 @@
     "location":"https://maps.app.goo.gl/TAGshx3FhUXMNXDC7",
     "description":"En este museo se pueden conocer las diferentes facetas de los que fue un medio de transporte muy popular en El Salvador."
   },
-  {
-    "country":"El Salvador",
-    "city":"San Salvador",
-    "name":"Plaza Futura",
-    "location":"https://maps.app.goo.gl/Bvr2P24rzFSakior6",
-    "description":"Una plaza gastronómica y de conveniencia al aire libre enclavada en un sexto piso que sirve de punto de referencia, donde convergen una amplia oferta gastronómica y el paisaje más espectacular de la cuidad."
-    },
     {
       "country":"El Salvador",
       "city":"San Salvador",
-      "name":"Parque Balboa",
-      "location":"https://maps.app.goo.gl/rmJWPdDb1HwRLy379",
-      "description":"El parque Balboa es el escape perfecto para conectar inmediatamente con la naturaleza. Además de ser considerado parte de las principales reservas ecológicas de El Salvador."
+      "name":"Plaza de la Libertad ",
+      "location":"https://maps.app.goo.gl/z3TJcSbH2u3EAfKi6",
+      "description":"Es el punto con más vida de toda la ciudad. Tanto locales como turistas hacen de ella el lugar más concurrido que ver en San Salvador. "
     },
 
   //Lugares turisticos de La Libertad
     {
       "country":"El Salvador",
       "city":"La Libertad",
-      "name":"El Tunco",
+      "name":"Playa El Tunco",
       "location":"https://maps.app.goo.gl/ecXVngyFEansCzbX7",
       "description":"Hermoso paisaje con aguas cálidas del pacífico, Grandes olas que atraen a surfistas de todo el mundo y tambien para disfrutar en familia."
     },
-
     {
       "country":"El Salvador",
       "city":"La Libertad",
-      "name":"Parque Nacional EL Boqueron",
-      "location":"https://maps.app.goo.gl/kpkGXcH6ZBrrg1CF9",
-      "description":"Un lugar único para disfrutar y contemplar la naturaleza y disfruta con amigos y familiares."
+      "name":"Puerto de La Libertad",
+      "location":"https://maps.app.goo.gl/mcrcG53Dj7LJoduK8",
+      "description":"Este puerto es uno de los más antiguos y pintorescos de El Salvador. Ofrece un mercado de mariscos fresco, un malecón donde puedes disfrutar de la brisa marina, y una variedad de restaurantes que sirven deliciosos platillos a base de mariscos."
     },
     {
       "country":"El Salvador",
       "city":"La Libertad",
-      "name":"Surf City",
-      "location":"https://maps.app.goo.gl/PWBzy37uPSrJPtbh6",
-      "description":"Un Hermoso lugar con un parque de atracciones, combina el encanto de la costa salvadoreña con desarrollo turístico de calidad."
-    },
+      "name":"Playa San Diego",
+      "location":"https://maps.app.goo.gl/RgiWE5Z1KMA6ebTUA",
+      "description":"Una de las mejores playas que he conocido. Propia para el descanso, la relajación y el surf. Cuenta con una diversidad de lugares que se adaptan fácilmente al presupuesto de cada visitante."
+    },  
     {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Playa El Majahual",
+      "location":"https://maps.app.goo.gl/93aiE3yR7v6JcjTHA",
+      "description":"Visita Playa El Majahual, una playa popular entre los locales y turistas por su ambiente animado y sus aguas cristalinas."
+    }, 
+   {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Playa El Sunzal",
+      "location":"https://maps.app.goo.gl/zMJGv33qzoxRWsC88",
+      "description":"Otra playa popular para el surf, El Sunzal es conocida por sus olas consistentes y su ambiente relajado. También es un excelente lugar para practicar buceo y snorkel."
+    }, 
+   {
+      "country":"El Salvador",
+      "city":"La Libertad",
+      "name":"Playa La Paz",
+      "location":"https://maps.app.goo.gl/7pcTUb3DPizrBpXS8",
+      "description":"Ubicada cerca del Puerto de La Libertad, esta playa es popular tanto para surfistas como para turistas que buscan disfrutar del sol y el mar en un entorno más tranquilo."
+    }, 
+   {
       "country":"El Salvador",
       "city":"La Libertad",
       "name":"Parque Nacional Walter Thilo Deininger",
@@ -185,87 +198,96 @@
     {
       "country":"El Salvador",
       "city":"La Libertad",
-      "name":"Playa San Diego",
-      "location":"https://maps.app.goo.gl/RgiWE5Z1KMA6ebTUA",
-      "description":"Una de las mejores playas que he conocido. Propia para el descanso, la relajación y el surf. Cuenta con una diversidad de lugares que se adaptan fácilmente al presupuesto de cada visitante."
+      "name":"Parque de Diversiones Sunset Park",
+      "location":"https://maps.app.goo.gl/PWBzy37uPSrJPtbh6",
+      "description":"Un Hermoso lugar con un parque de atracciones, combina el encanto de la costa salvadoreña con desarrollo turístico de calidad."
     },
     {
       "country":"El Salvador",
       "city":"La Libertad",
-      "name":"Playa El Zonte",
-      "location":"https://maps.app.goo.gl/hU6fx7GoQZtTHeJf6",
-      "description":"La zona contigua al río El Zonte ofrece numerosos hostales, casas de alquiler, hoteles y restaurantes, al igual que rentas de tablas de surf y clases de este deporte."
+      "name":"Parque Acuatico Los Chorros",
+      "location":"https://maps.app.goo.gl/ANgyMAJrJdCqtr4cA",
+      "description":"Un parque natural que cuenta con piscinas alimentadas por manantiales naturales y cascadas. Es un lugar ideal para pasar un día en familia rodeado de naturaleza."
     },
     {
       "country":"El Salvador",
       "city":"La Libertad",
-      "name":"Pueblo de La Libertad",
-      "location":"https://maps.app.goo.gl/GATuwXwyypdi1hcC8",
-      "description":"Es un encantador destino costero en El Salvador, conocido por su ambiente relajado y vibrante. Con un hermoso malecón y playas cercanas, como El Tunco y El Zonte, es popular entre surfistas y turistas."
+      "name":"Parque Aqueológico Joya de Cerén",
+      "location":"https://maps.app.goo.gl/Zeis7KwaSB2vh3rT8",
+      "description":"Ubicado en San Juan Opico, departamento de la Libertad. En reconocimiento de su importancia, en 1993 fu inscrito en el listado de Patrimonio Mundial de UNESCO. Es el unico sitio de patrimonio mundial en El Salvador."
     },
-    {
-      "country":"El Salvador",
-      "city":"La Libertad",
-      "name":"Tamanique",
-      "location":"https://maps.app.goo.gl/J4rBeYXurTRWrgJt9",
-      "description":"Este pequeño pueblo en las montañas es conocido por las cascadas de Tamanique. Es un excelente lugar para hacer caminatas y nadar en las refrescantes pozas naturales."
-    },
-    {
-      "country":"El Salvador",
-      "city":"La Libertad",
-      "name":"Playa San Blas",
-      "location":"https://maps.app.goo.gl/HFHkd8Pu2VxDF94e8",
-      "description":"Menos concurrida que otras playas, San Blas es ideal para quienes buscan un lugar más tranquilo para nadar y disfrutar de la tranquilidad del mar."
-    }, 
+  
   //Lugares turisticos de Cuscatlán 
-  {
-  "country':"El Salvador",
-  "city": "Cuscatlán", 
-  "name":"Teatro Alejandro Cotto",
-"location":"
-"description":"El teatro Alejandro Cotto es un espacio para la reflexión y la promoción de la cultura salvadoreña, y un homenaje a Cotto, quien contribuyó significativamente al desarrollo del cine y la cultura en el país.",
-},
-  {
-  "country':"El Salvador",
-  "city": "Cuscatlán", 
-  "name":"Suchitoto",
-"location":"
-"description":"Es uno de los destinos turísticos más destacados del país, conocido por su riqueza histórica, su encanto colonial y su entorno natural.",
-},
-  {
-  "country':"El Salvador",
-  "city": "Cuscatlán", 
-  "name":"Parqueo Nativo Ecolodge",
-"location":"
-"description":"Se trata de un espacio diseñado para ofrecer una experiencia en contacto con la naturaleza, ideal para quienes buscan relajarse y disfrutar de la tranquilidad del entorno.",
-},
-  {
+  
+   {
   "country':"El Salvador",
   "city": "Cuscatlán", 
   "name":"Lago Suchitlán",
-"location":"
-"description":"El Lago Suchitlán es el cuerpo de agua más grande de El Salvador, creado artificialmente en 1976 tras la construcción de la Central Hidroeléctrica del Cerrón Grande. Ubicado en la región norte del país, entre los departamentos de Chalatenango, Cuscatlán, Cabañas y San Salvador, el lago cubre aproximadamente 135 km².",
-},
-  {
-  {
+  "location":"https://maps.app.goo.gl/TUrwezmdjYWnGsTt8",
+  "description":"El Lago Suchitlán es el cuerpo de agua más grande de El Salvador, creado artificialmente en 1976 tras la construcción de la Central Hidroeléctrica del Cerrón Grande. Ubicado en la región norte del país, entre los departamentos de Chalatenango, Cuscatlán, Cabañas y San Salvador, el lago cubre aproximadamente 135 km².",
+  },
+   {
   "country':"El Salvador",
   "city": "Cuscatlán", 
-  "name":"Casa Museo de Alejandro Cotto",
-"location":"
-"description":"La casa, construida con un estilo colonial, es un reflejo del gusto y la visión artística de Cotto, conservando mobiliario, obras de arte, libros y recuerdos personales que reflejan su vida y su contribución al arte y la cultura de El Salvador.",
-},
-  {
+  "name":"La Isla El Ermitaño",
+  "location":"https://maps.app.goo.gl/PeXPVZLczNrxdWpF8",
+  "description":"La Isla El Ermitaño es un pequeño paraíso natural ubicado en el Lago Suchitlán, cerca del pueblo de Suchitoto. Es un lugar perfecto para disfrutar de la tranquilidad y la belleza del entorno, rodeado de exuberante vegetación y vida silvestre.",
+  },
+   {
   "country':"El Salvador",
   "city": "Cuscatlán", 
-  "name":"Cascada Los Tercios",
-"location":"
-"description":"El lugar es ideal para quienes disfrutan del senderismo y el ecoturismo, ya que se encuentra rodeado de vegetación. La caminata hacia la cascada es relativamente fácil y no requiere equipo especializado, lo que lo hace accesible para la mayoría de los visitantes.",
-},
-  {
+  "name":"Parque Central de Suchitoto",
+  "location":"https://maps.app.goo.gl/m2dGzM3NKNo3U9CX8",
+  "description":"Es el punto de reunión para los habitantes de Suchitoto. Artesanos indigenas ofrecen sus productos en un improvisado mercadito.",
+  },
+   {
   "country':"El Salvador",
   "city": "Cuscatlán", 
-  "name":"Centro Arte Para La Paz",
-"location":"
-"description":"es un espacio cultural que se centra en la promoción del arte y la paz. Este centro tiene como objetivo fomentar la creatividad y el desarrollo personal a través de diversas actividades artísticas, talleres y eventos culturales.",
-},
-  
+  "name":"Cascadas de Los Tercios",
+  "location":"https://maps.app.goo.gl/FbfJKNrmpSwnyBoj7",
+  "description":"Estas cascadas son únicas debido a las formaciones rocosas geométricas que parecen bloques de piedra tallados a mano. Es un lugar ideal para los amantes de la naturaleza y la fotografía.",
+  },
+   {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Cerro de las Pavas",
+  "location":"https://maps.app.goo.gl/bftzRg5rhL2MUqah9",
+  "description":"El pueblo de Cojutepeque, en el departamento de Cuscatlán, en él se encuentra el cerro de las Pavas, a tan solo 34 kilómetros al este de San Salvador, desde donde puede verse el magnífico Lago de Ilopango.",
+  },
+   {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Museo de la Moneda",
+  "location":"https://maps.app.goo.gl/fst7kMiF7PhbLPEF7",
+  "description":"El Museo de la Moneda en  Suchitoto es un espacio dedicado a la historia de la moneda en El Salvador. Aquí podrás conocer la evolución de la moneda salvadoreña y apreciar una colección de billetes y monedas antiguas.",
+  },
+   {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"La Iglesia Santa Lucía Suchitoto",
+  "location":"https://maps.app.goo.gl/vyvvo9JFi9DkDrx87",
+  "description":"La Iglesia Santa Lucía Suchitoto es una hermosa iglesia colonial ubicada en el corazón del pintoresco pueblo de Suchitoto. Con su arquitectura impresionante y su rica historia, es una visita obligada para cualquier viajero que visite Cuscatlán.",
+  },
+   {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Casa 1800 Suchitoto",
+  "location":"https://maps.app.goo.gl/hndeRC4uNJmM2mnA9",
+  "description":"Casa 1800 Suchitoto es una hermosa casa colonial que ofrece una experiencia única de alojamiento y cultura. Con una arquitectura impresionante y un ambiente acogedor, es el lugar perfecto para disfrutar de la historia y la belleza de Suchitoto.",
+  },
+   {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"Sitio Arqueológico Ciudad Vieja",
+  "location":"https://maps.app.goo.gl/bPGh2PfpnxxVbGnYA",
+  "description":"El Sitio Arqueológico Ciudad Vieja es un importante sitio histórico que muestra las ruinas de una antigua ciudad precolombina. Es un lugar fascinante para aprender sobre la historia y la cultura de  El Salvador.",
+  },
+    {
+  "country':"El Salvador",
+  "city": "Cuscatlán", 
+  "name":"La Casa Museo de Alejandro Cotto",
+  "location":"https://maps.app.goo.gl/8Z6eTsdLozb3JFBJ7",
+  "description":"La Casa Museo de Alejandro Cotto es un espacio dedicado a la vida y obra del reconocido cineasta salvadoreño. Aquí podrás apreciar objetos personales, fotografías y obras de arte relacionadas con su carrera.",
+  },
+
+
