@@ -36,7 +36,7 @@ export function Carrousel({ slides }) {
           <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse ">
             {
               slides.map((_, slideIndex) => (
-                <button key={slideIndex} type="button" onClick={() => goToSlide(slideIndex)} className={`w-3 h-3 bg-white rounded-full ${current === slideIndex ? 'bg-gray-300' : 'bg-gray-500'}`} aria-current={current === slideIndex} aria-label={`Slide ${slideIndex + 1}`} data-carousel-slide-to={slideIndex}></button>
+                <button key={slideIndex} type="button" onClick={() => goToSlide(slideIndex)} className={`w-3 h-3 rounded-full ${current === slideIndex ? 'bg-gray-200' : 'bg-gray-400'}`} aria-current={current === slideIndex} aria-label={`Slide ${slideIndex + 1}`} data-carousel-slide-to={slideIndex}></button>
               ))
             }
 
