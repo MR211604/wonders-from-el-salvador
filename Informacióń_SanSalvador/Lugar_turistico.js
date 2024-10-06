@@ -216,79 +216,56 @@ const places = [
     "location": "https://maps.app.goo.gl/Zeis7KwaSB2vh3rT8",
     "description": "Ubicado en San Juan Opico, departamento de la Libertad. En reconocimiento de su importancia, en 1993 fu inscrito en el listado de Patrimonio Mundial de UNESCO. Es el unico sitio de patrimonio mundial en El Salvador."
   },
-
   //Lugares turisticos de Cuscatlán 
-
-  //  {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"Lago Suchitlán",
-  // "location":"https://maps.app.goo.gl/TUrwezmdjYWnGsTt8",
-  // "description":"El Lago Suchitlán es el cuerpo de agua más grande de El Salvador, creado artificialmente en 1976 tras la construcción de la Central Hidroeléctrica del Cerrón Grande. Ubicado en la región norte del país, entre los departamentos de Chalatenango, Cuscatlán, Cabañas y San Salvador, el lago cubre aproximadamente 135 km².",
-  // },
-  //  {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"La Isla El Ermitaño",
-  // "location":"https://maps.app.goo.gl/PeXPVZLczNrxdWpF8",
-  // "description":"La Isla El Ermitaño es un pequeño paraíso natural ubicado en el Lago Suchitlán, cerca del pueblo de Suchitoto. Es un lugar perfecto para disfrutar de la tranquilidad y la belleza del entorno, rodeado de exuberante vegetación y vida silvestre.",
-  // },
-  //  {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"Parque Central de Suchitoto",
-  // "location":"https://maps.app.goo.gl/m2dGzM3NKNo3U9CX8",
-  // "description":"Es el punto de reunión para los habitantes de Suchitoto. Artesanos indigenas ofrecen sus productos en un improvisado mercadito.",
-  // },
-  //  {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"Cascadas de Los Tercios",
-  // "location":"https://maps.app.goo.gl/FbfJKNrmpSwnyBoj7",
-  // "description":"Estas cascadas son únicas debido a las formaciones rocosas geométricas que parecen bloques de piedra tallados a mano. Es un lugar ideal para los amantes de la naturaleza y la fotografía.",
-  // },
-  //  {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"Cerro de las Pavas",
-  // "location":"https://maps.app.goo.gl/bftzRg5rhL2MUqah9",
-  // "description":"El pueblo de Cojutepeque, en el departamento de Cuscatlán, en él se encuentra el cerro de las Pavas, a tan solo 34 kilómetros al este de San Salvador, desde donde puede verse el magnífico Lago de Ilopango.",
-  // },
-  //  {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"Museo de la Moneda",
-  // "location":"https://maps.app.goo.gl/fst7kMiF7PhbLPEF7",
-  // "description":"El Museo de la Moneda en  Suchitoto es un espacio dedicado a la historia de la moneda en El Salvador. Aquí podrás conocer la evolución de la moneda salvadoreña y apreciar una colección de billetes y monedas antiguas.",
-  // },
-  //  {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"La Iglesia Santa Lucía Suchitoto",
-  // "location":"https://maps.app.goo.gl/vyvvo9JFi9DkDrx87",
-  // "description":"La Iglesia Santa Lucía Suchitoto es una hermosa iglesia colonial ubicada en el corazón del pintoresco pueblo de Suchitoto. Con su arquitectura impresionante y su rica historia, es una visita obligada para cualquier viajero que visite Cuscatlán.",
-  // },
-  //  {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"Casa 1800 Suchitoto",
-  // "location":"https://maps.app.goo.gl/hndeRC4uNJmM2mnA9",
-  // "description":"Casa 1800 Suchitoto es una hermosa casa colonial que ofrece una experiencia única de alojamiento y cultura. Con una arquitectura impresionante y un ambiente acogedor, es el lugar perfecto para disfrutar de la historia y la belleza de Suchitoto.",
-  // },
-  //  {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"Sitio Arqueológico Ciudad Vieja",
-  // "location":"https://maps.app.goo.gl/bPGh2PfpnxxVbGnYA",
-  // "description":"El Sitio Arqueológico Ciudad Vieja es un importante sitio histórico que muestra las ruinas de una antigua ciudad precolombina. Es un lugar fascinante para aprender sobre la historia y la cultura de  El Salvador.",
-  // },
-  //   {
-  // "country':"El Salvador",
-  // "city": "Cuscatlán", 
-  // "name":"La Casa Museo de Alejandro Cotto",
-  // "location":"https://maps.app.goo.gl/8Z6eTsdLozb3JFBJ7",
-  // "description":"La Casa Museo de Alejandro Cotto es un espacio dedicado a la vida y obra del reconocido cineasta salvadoreño. Aquí podrás apreciar objetos personales, fotografías y obras de arte relacionadas con su carrera.",
-  // },
+  {
+    "country": "El Salvador",
+    "city": "Cuscatlán",
+    "name": "Teatro Alejandro Cotto",
+    "location": "https://maps.app.goo.gl/EFoDw6LVsmyo8euz6",
+    "description": "El teatro Alejandro Cotto es un espacio para la reflexión y la promoción de la cultura salvadoreña, y un homenaje a Cotto, quien contribuyó significativamente al desarrollo del cine y la cultura en el país.",
+  },
+  {
+    "country": "El Salvador",
+    "city": "Cuscatlán",
+    "name": "Parque Central Suchitoto",
+    "location": "https://maps.app.goo.gl/3b9MJ3EPcEscRtBM6:",
+    "description": "Es uno de los destinos turísticos más destacados del país, conocido por su riqueza histórica, su encanto colonial y su entorno natural.",
+  },
+  {
+    "country": "El Salvador",
+    "city": "Cuscatlán",
+    "name": "Parque Nativo Ecolodge",
+    "location": "https://maps.app.goo.gl/dhDkgoGQo1KvMxYT9",
+    "description": "Se trata de un espacio diseñado para ofrecer una experiencia en contacto con la naturaleza, ideal para quienes buscan relajarse y disfrutar de la tranquilidad del entorno.",
+  },
+  {
+    "country": "El Salvador",
+    "city": "Cuscatlán",
+    "name": "Lago Suchitlán",
+    "location": "https://maps.app.goo.gl/qn6fYTACgHLCnS9C9",
+    "description": "El Lago Suchitlán es el cuerpo de agua más grande de El Salvador, creado artificialmente en 1976 tras la construcción de la Central Hidroeléctrica del Cerrón Grande. Ubicado en la región norte del país, entre los departamentos de Chalatenango, Cuscatlán, Cabañas y San Salvador, el lago cubre aproximadamente 135 km².",
+  },
+  {
+    "country": "El Salvador",
+    "city": "Cuscatlán",
+    "name": "Casa Museo de Alejandro Cotto",
+    "location": "https://maps.app.goo.gl/KYbB7Wg3eFpMevU49",
+    "description": "La casa, construida con un estilo colonial, es un reflejo del gusto y la visión artística de Cotto, conservando mobiliario, obras de arte, libros y recuerdos personales que reflejan su vida y su contribución al arte y la cultura de El Salvador.",
+  },
+  {
+    "country": "El Salvador",
+    "city": "Cuscatlán",
+    "name": "Cascada Los Tercios",
+    "location": "https://maps.app.goo.gl/jJc12hcgv32KFFbD7",
+    "description": "El lugar es ideal para quienes disfrutan del senderismo y el ecoturismo, ya que se encuentra rodeado de vegetación. La caminata hacia la cascada es relativamente fácil y no requiere equipo especializado, lo que lo hace accesible para la mayoría de los visitantes.",
+  },
+  {
+    "country": "El Salvador",
+    "city": "Cuscatlán",
+    "name": "Centro Arte Para La Paz",
+    "location": "https://maps.app.goo.gl/1AaPdyH9zSgR8hg2A",
+    "description": "es un espacio cultural que se centra en la promoción del arte y la paz. Este centro tiene como objetivo fomentar la creatividad y el desarrollo personal a través de diversas actividades artísticas, talleres y eventos culturales.",
+  },
 ]
 
 //Agregando precios a los lugares turisticos
@@ -297,45 +274,63 @@ places.forEach(place => {
   place.max_price = 25
 })
 
+function formatPlaceNames(places) {
+  return places.map(place => {
+    let formattedName = place.name
+      .trim() // Eliminar espacios innecesarios
+      .replace(/\.$/, '') // Eliminar el punto final si existe
+      .toLowerCase() // Convertir a minúsculas
+      .replace(/\s+/g, '_') // Reemplazar espacios por guiones bajos
+      .replace(/[áéíóúñ]/g, char => { // Reemplazar caracteres especiales
+        const map = { 'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'ñ': 'n' };
+        return map[char];
+      });
+    return { ...place, name: formattedName }
+  })
+}
 
-places.forEach(place => {
-  const insertQuery = `INSERT INTO PLACE (country, city, name, location, description, min_price, max_price) VALUES ('${place.country}', '${place.city}', '${place.name}', '${place.location}', '${place.description}', ${place.min_price}, ${place.max_price});`
-  console.log(insertQuery)
-})
+// const formattedPlaces = formatPlaceNames(places)
 
-//Informacion del usuario sin cierta informacion filtrada
+// formattedPlaces.forEach(place => {
+//   const insertQuery = `INSERT INTO PLACE (country, city, name, location, description, min_price, max_price) VALUES ('${place.country}', '${place.city}', '${place.name}', '${place.location}', '${place.description}', ${place.min_price}, ${place.max_price});`
+//   console.log(insertQuery)
+// })
+
+// //Informacion del usuario sin cierta informacion filtrada
 const placeWithoutInfo = places.map((place, index) => {
   const { country, city, location, description, min_price, max_price, ...placeWithoutInfo } = place
   return { id: index + 1, ...placeWithoutInfo, }
 })
 
-const placeCategories = [
-  {
-    id: 1,
-    name: "Playa"
-  },
-  {
-    id: 2,
-    name: "Montaña"
-  },
-  {
-    id: 3,
-    name: "Parque"
-  },
-  {
-    id: 4,
-    name: "museo"
-  },
-  {
-    id: 5,
-    name: "plaza"
-  },
-  {
-    id: 6,
-    name: "historia nacional"
-  },
-  {
-    id: 7,
-    name: "senderismo"
-  },
-]
+console.log(placeWithoutInfo)
+
+// const placeCategories = [
+//   {
+//     id: 1,
+//     name: "Playa"
+//   },
+//   {
+//     id: 2,
+//     name: "Montaña"
+//   },
+//   {
+//     id: 3,
+//     name: "Parque"
+//   },
+//   {
+//     id: 4,
+//     name: "museo"
+//   },
+//   {
+//     id: 5,
+//     name: "plaza"
+//   },
+//   {
+//     id: 6,
+//     name: "historia nacional"
+//   },
+//   {
+//     id: 7,
+//     name: "senderismo"
+//   },
+// ]

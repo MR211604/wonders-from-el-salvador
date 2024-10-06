@@ -244,10 +244,66 @@ const placesDetails = [
     "where_to_stay": "Sabas Beach Resort",
     "where_to_eat": "La Dolce Vita",
     "safety_tips": "Evitar zonas solitarias, vigilar las pertenencias, informarse sobre le clima y consulta  a los locales."
+  },
+  {
+    "place_id": 31,
+    "direction": "Dirígete al Terminal de Oriente.Toma la Ruta 163, que es un autobús directo que te lleva desde San Salvador hasta Suchitoto. Esta ruta suele pasar cada 30 minutos a 1 hora. El tiempo de viaje es de aproximadamente 1.5 a 2 horas. Al llegar en la Ruta 163, puedes caminar unas pocas cuadras desde la terminal de buses hacia la Calle 15 de Septiembre, donde se encuentra el teatro.",
+    "best_season_to_go": "depende de tus preferencias climáticas y de las actividades culturales que te interesen: Temporada seca (noviembre a abril):  Es ideal si prefieres un clima más fresco y seco. Temporada de lluvias (mayo a octubre): Aunque llueve más durante estos meses, el paisaje está más verde y exuberante.En ocasiones, la lluvia es intermitente, permitiendo disfrutar del teatro y otras actividades culturales.",
+    "where_to_stay": "Hotel el tejado",
+    "where_to_eat": "El Gringo Hostel & Restaurant",
+    "safety_tips": "Evita zonas poco iluminadas de noche: Aunque el centro es seguro, si te alejas de las áreas turísticas, es mejor moverte en grupo o en transporte confiable por la noche. Evita objetos de valor a la vista: Aunque es un lugar tranquilo, mantener tus objetos personales, como cámaras, teléfonos y billeteras, fuera de vista en zonas concurridas puede reducir cualquier riesgo."
+  },
+  {
+    "place_id": 32,
+    "direction": "Ruta de bus: Autobús de la ruta 140 (San Salvador - Suchitoto).El bus te dejará en la terminal de autobuses de Suchitoto, que está a solo unas cuadras del Parque Central (unos 5-10 minutos caminando). Desde la terminal, solo necesitas caminar hacia el este por la Calle 15 de Septiembre, y pronto llegarás al parque. ",
+    "best_season_to_go": "Mejor época para visitar: Noviembre a abril (temporada seca). Para eventos culturales: Septiembre (Festival de los Farolitos) y Semana Santa (abril). Si prefieres naturaleza exuberante: Mayo a octubre (temporada de lluvias).",
+    "where_to_stay": "Hostel Suchitoto",
+    "where_to_eat": "Café Suchitlán",
+    "safety_tips": "Evita zonas poco iluminadas de noche: Aunque el centro es seguro, si te alejas de las áreas turísticas, es mejor moverte en grupo o en transporte confiable por la noche. Evita objetos de valor a la vista: Aunque es un lugar tranquilo, mantener tus objetos personales, como cámaras, teléfonos y billeteras, fuera de vista en zonas concurridas puede reducir cualquier riesgo."
+  },
+  {
+    "place_id": 33,
+    "direction": "Buses hacia La Libertad: Puedes tomar un bus desde el Terminal de Buses de San Salvador hacia La Libertad. Los buses que van a La Libertad suelen estar señalizados y pueden llevarte a la zona más cercana al ecolodge. Buses de la ruta 102: Una opción popular es el bus de la ruta 102, que va directo a La Libertad.Pregunta al conductor si va hacia el área de El Tunco o Zonte, que están cerca del ecolodge.",
+    "best_season_to_go": " Durante todo el año",
+    "where_to_stay": "Cabañas El Pescador",
+    "where_to_eat": "Restaurante Los Tres Cafetales",
+    "safety_tips": "Horarios de buses: Verifica los horarios de los buses de regreso a Suchitoto para asegurarte de tener tiempo suficiente para explorar el parque. Consulta el clima: Revisa el clima antes de salir, ya que el área puede ser lluviosa durante ciertas épocas del año. Lleva agua y snacks: Asegúrate de llevar agua y algunos snacks para disfrutar durante tu visita al parque.",
+  },
+  {
+    "place_id": 34,
+    "direction": "Terminal de Buses: Dirígete a la Terminal de Buses de San Salvador (Terminal de Occidente). Buses a Suchitoto: Busca los buses que van a Suchitoto.Estos buses suelen salir con frecuencia y el viaje dura aproximadamente 1.5 a 2 horas, dependiendo del tráfico. Llegada a Suchitoto: Una vez que llegues a Suchitoto, puedes preguntar a los locales o buscar señalización para llegar al Lago Suchitlán, que está a unos 15-20 minutos a pie del centro de la ciudad.",
+    "best_season_to_go": " Durante todo el año",
+    "where_to_stay": "Hotel Mirador",
+    "where_to_eat": "La Posada de Suchitlán",
+    "safety_tips": "Vístete adecuadamente: El clima puede ser cálido, así que lleva ropa ligera y cómoda. También es útil un sombrero o gorra para protegerte del sol. Protección solar: Usa bloqueador solar y repelente de insectos, especialmente si planeas estar al aire libre durante varias horas.Cuidado en el agua: Si decides nadar o participar en actividades acuáticas, asegúrate de hacerlo en áreas seguras y designadas.Usa chalecos salvavidas si es necesario. ",
+  },
+  {
+    "place_id": 35,
+    "direction": "Desde San Salvador: Toma el bus de la Ruta 129 que va desde San Salvador hacia Suchitoto",
+    "best_season_to_go": " Durante todo el año",
+    "where_to_stay": "Casa 1800 Suchitoto",
+    "where_to_eat": "Los Almendros de San Lorenzo",
+    "safety_tips": "uidado con las instalaciones: Trata la propiedad y sus exhibiciones con respeto. Es un lugar culturalmente significativo y debe ser tratado como tal. Silencio y consideración: Mantén un volumen bajo mientras te encuentras dentro de la casa para no interrumpir la experiencia de otros visitantes.",
+  },
+  {
+    "place_id": 36,
+    "direction": "Ve a la Terminal de Autobuses de San Salvador (Terminal de Occidente o Terminal de San Salvador).Toma un bus hacia Suchitoto.Varias compañías ofrecen este servicio, como Transportes Rápidos de El Salvador y Transportes Ahuachapaneco.",
+    "best_season_to_go": " Durante todo el año",
+    "where_to_stay": "Hotel Los Tercios ",
+    "where_to_eat": "Restaurante El Rancho",
+    "safety_tips": "Ropa adecuada: Usa ropa ligera y cómoda, preferiblemente de secado rápido. Un traje de baño es recomendable si planeas nadar. Calzado apropiado: Lleva calzado resistente y antideslizante, ya que el camino puede ser resbaladizo.Botas de senderismo o sandalias de trekking son buenas opciones. Hidratación: Lleva suficiente agua para mantenerte hidratado durante tu visita, especialmente si planeas hacer senderismo. Protección solar: Aplica bloqueador solar y lleva un sombrero o gorra, ya que la exposición al sol puede ser intensa. No dejes basura: Mantén la limpieza del área.Lleva tus desechos contigo y respeta la flora y fauna local. No molestar la vida silvestre: Observa a los animales y plantas, pero no los molestes ni los toques. Atención al entorno: Mantente atento a tu entorno y camina con cuidado, especialmente en áreas resbaladizas o cerca del agua. Viaja en grupo: Si es posible, visita la cascada con amigos o familiares.Esto no solo es más seguro, sino que también es más divertido. Horarios: Verifica los horarios de apertura de los restaurantes, especialmente si planeas visitarlos durante la semana. Reservas: Si planeas ir en fin de semana o en temporada alta, considera hacer una reserva, ya que algunos lugares pueden llenarse rápidamente.",
+  },
+  {
+    "place_id": 37,
+    "direction": "Dirígete a la Terminal de Occidente en San Salvador. Busca los buses que van hacia Suchitoto. Compañías como Transportes Rápidos de El Salvador y Transportes Ahuachapaneco ofrecen este servicio. El costo del pasaje suele ser entre $1.50 y $3.00 USD y el viaje dura aproximadamente 1.5 a 2 horas.",
+    "best_season_to_go": " Durante todo el año",
+    "where_to_stay": "Hostel Casa Verde",
+    "where_to_eat": "La Posada de Suchitlán",
+    "safety_tips": "Aprecia la diversidad: El Centro Arte para la Paz es un lugar que celebra la diversidad cultural. Muestra respeto por las diferentes expresiones artísticas y las tradiciones que encuentres. Reflexiona sobre el arte: Tómate un tiempo para reflexionar sobre las obras que veas.Pregúntate qué mensaje transmiten y cómo resuenan contigo. Fotografía responsable: Si deseas tomar fotos, pregunta primero si está permitido, especialmente en áreas donde se exhiben obras de arte.",
   }
 ]
 
 placesDetails.forEach(place => {
-  const insertQuery = `INSERT INTO place_details (place_id, direction, best_time, where_to_stay, where_to_eat, safety_tips) VALUES (${place.place_id}, '${place.direction}', '${place.best_time}', '${place.where_to_stay}', '${place.where_to_eat}', '${place.safety_tips}');`
+  const insertQuery = `INSERT INTO place_details (place_id, direction, best_time, where_to_stay, where_to_eat, safety_tips) VALUES (${place.place_id}, '${place.direction}', '${place.best_season_to_go}', '${place.where_to_stay}', '${place.where_to_eat}', '${place.safety_tips}');`
   console.log(insertQuery)
 })
