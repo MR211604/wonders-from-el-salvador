@@ -1,1 +1,6 @@
 export * from './pages/LandingPage'
+export * from './pages/PlacePage'
+export * from './components/CarrouselPlaceholder'
+export * from './components/PlaceCard'
+export * from './components/TestComponent'
+export * from './components/Carrousel'

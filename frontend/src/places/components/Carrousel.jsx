@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export function Carrousel({ slides }) {
 
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(0);
 
   const prevSlide = () => {
     const isFirstSlide = current === 0;
@@ -33,7 +33,7 @@ export function Carrousel({ slides }) {
             ))}
           </div>
 
-          <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse ">
+          <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse ">
             {
               slides.map((_, slideIndex) => (
                 <button key={slideIndex} type="button" onClick={() => goToSlide(slideIndex)} className={`w-3 h-3 rounded-full ${current === slideIndex ? 'bg-gray-200' : 'bg-gray-400'}`} aria-current={current === slideIndex} aria-label={`Slide ${slideIndex + 1}`} data-carousel-slide-to={slideIndex}></button>
