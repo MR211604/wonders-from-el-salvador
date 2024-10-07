@@ -44,10 +44,10 @@ export async function loginUser(req, res) {
 
   } catch (error) {
     if (error instanceof ValidationError) {
-      return res.status(400).send({ error: error.message })
+      return res.status(400).send({ ok: false, error: error.message })
     } else {
       console.log('error: ', error)
-      return res.status(500).send({ error: 'Error interno' })
+      return res.status(500).send({ ok: false, error: 'Error interno' })
     }
   }
 }
