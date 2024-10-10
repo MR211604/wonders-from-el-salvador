@@ -4,6 +4,8 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 
 export function PaginationButtons({ setCurrentPage, currentPage, totalPages }) {
 
+  console.log('totalPages', totalPages)
+
   const handleClickPage = ({ selected }) => {
     setCurrentPage(selected + 1)
   }
@@ -35,8 +37,8 @@ export function PaginationButtons({ setCurrentPage, currentPage, totalPages }) {
         pageClassName='font-bold cursor-pointer block hover:bg-slate-200 w-10 h-10 flex items-center justify-center rounded-md mx-2 transition duration-300 ease-in-out'
         activeClassName='bg-slate-300 text-black'
         pageRangeDisplayed={5}
-        pageCount={totalPages}
-        onPageChange={handleClickPage}        
+        pageCount={Math.ceil(totalPages)}
+        onPageChange={handleClickPage}
       />
     </div>
   )
