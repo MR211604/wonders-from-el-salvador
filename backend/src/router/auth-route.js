@@ -39,8 +39,15 @@ router.get('/failure', (_, res) => {
 router.get('/renew', verifyToken, renewToken)
 
 //Logout
-router.post('/logout', (req, res) => {
-  req.logout();
-  res.status(200).send({ message: 'Logout exitoso' })
+router.get('/logout', (_, res) => {
+  try {
+    return res.cookie('token', 'none', {
+      expires: new Date(Date.now()),
+      httpOnly: true
+    }).status(200).send({ ok: true, message: 'Logout exitoso' })
+  } catch (error) {
+    console.log('error: ', error)
+    return res.status(500).send({ ok: false, error: 'Error interno' })
+  }
 })
 export default router;

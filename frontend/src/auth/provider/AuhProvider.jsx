@@ -53,7 +53,6 @@ export function AuthProvider({ children }) {
   }
 
   const fetchUserData = useCallback(async () => {
-    console.log('SE HACE LLAMADO A FETCH USER DATA')
     const response = await fetch('http://localhost:3000/api/auth/success', {
       method: "GET",
       credentials: "include",
@@ -66,7 +65,6 @@ export function AuthProvider({ children }) {
       console.log('No se pudo obtener la información del usuario')
     }
     const data = await response.json()
-    console.log('data obtenida... del fetch user data', data)
     localStorage.setItem('token', data.token)
     setAuth({
       id: data.user.id,
@@ -78,7 +76,6 @@ export function AuthProvider({ children }) {
   }, [])
 
   const verifyToken = useCallback(async () => {
-    console.log('SE HACE LLAMADO A VERIFY TOKEN')
 
     const token = localStorage.getItem('token')
     if (!token) {
@@ -116,6 +113,8 @@ export function AuthProvider({ children }) {
 
   const logout = async () => {
     localStorage.removeItem('token')
+    const response = await fetchWithToken('auth/logout')
+    if(!response.ok) { console.log('Ocurrio un error al intentar cerrar sesion') }
     setAuth({
       id: null,
       cheking: false,

@@ -4,8 +4,6 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 
 export function PaginationButtons({ setCurrentPage, currentPage, totalPages }) {
 
-  console.log('totalPages', totalPages)
-
   const handleClickPage = ({ selected }) => {
     setCurrentPage(selected + 1)
   }

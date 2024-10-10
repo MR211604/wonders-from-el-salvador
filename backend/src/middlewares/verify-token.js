@@ -4,8 +4,6 @@ export function verifyToken(req, res, next) {
 
   const token = req.header('x-token')
 
-  console.log('token que viene', token)
-
   if (!token) {
     return res.status(401).send({ ok: false, error: 'El token no fue proporcionado' })
   }

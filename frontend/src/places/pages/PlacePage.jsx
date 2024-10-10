@@ -18,7 +18,6 @@ export function PlacePage() {
       try {
         const response = await fetch(`http://localhost:3000/api/places/getPlaceById/${place_id}`);
         const data = await response.json();
-        console.log('data de este place', data)
         if (!data.ok) {
           setError(data.msg)
         }

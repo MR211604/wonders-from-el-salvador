@@ -14,7 +14,6 @@ export class AuthRepository {
     ValidationsRepository.validatePassword(password);
 
     const foundUser = await UserModel.findOne({ where: { email } });
-    console.log('found user', foundUser)
     if (foundUser) throw new Error("El email ingresado ya está registrado");
 
     const hashedPassword = bcrypt.hashSync(password, 10);
