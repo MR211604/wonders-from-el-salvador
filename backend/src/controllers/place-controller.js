@@ -26,8 +26,8 @@ export async function getPlaces(req, res) {
 export async function getPlaceById(req, res) {
   try {
     const { id } = req.params;
-    const place = await PlaceRepository.getPlace(id);
-    if (place === null) {
+    const [place] = await PlaceRepository.getPlace(id);
+    if (place.length === 0) {
       return res.status(404).json({ ok: false, msg: 'Lugar no encontrado' });
     }
     return res.status(200).json({ ok: true, place });

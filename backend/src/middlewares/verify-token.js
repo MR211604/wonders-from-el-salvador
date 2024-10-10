@@ -2,18 +2,15 @@ import jwt from 'jsonwebtoken'
 
 export function verifyToken(req, res, next) {
 
-  const token = req.cookies.token
-  const googleToken = req.cookies['connect.sid']
+  const token = req.header('x-token')
 
-  //Si no tiene token de google o token de jwt, no esta autorizado
-  if (!token || !googleToken) {
-    return res.status(401).send({ error: 'No autorizado' })
+  console.log('token que viene', token)
+
+  if (!token) {
+    return res.status(401).send({ ok: false, error: 'El token no fue proporcionado' })
   }
 
   try {
-    if (googleToken) {
-      return next()
-    }
     const payload = jwt.verify(token, process.env.JWT_SECRET)
     req.user = payload
     return next();

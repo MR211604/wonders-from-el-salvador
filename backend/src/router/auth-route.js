@@ -2,7 +2,7 @@ import { Router } from "express";
 import passport from "passport";
 import "../auth.js";
 import { verifyToken } from "../middlewares/verify-token.js";
-import { loginUser, registerUser } from "../controllers/user-controller.js";
+import { loginRefresh, loginUser, registerUser, renewToken } from "../controllers/user-controller.js";
 
 const router = Router();
 
@@ -11,30 +11,36 @@ const router = Router();
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
 
 router.get('/google/callback', passport.authenticate('google', {
-  successRedirect: '/api/auth/success',
+  successRedirect: process.env.CLIENT_APP_URL,
   failureRedirect: '/api/auth/failure',
   authInfo: true
 }))
 
 //Autentificacion con JWT, Email y Password
-router.get('/register', registerUser)
+router.post('/register', registerUser)
 
 router.post('/login', loginUser)
 
 //Probando ruta de autentificacion con JWT
-router.get('/protected', verifyToken, (_, res) => {
+router.get('/protected', verifyToken, (req, res) => {
   res.status(200).send({ message: 'Ruta protegida' })
 })
 
+// Ruta que nos servira para obtener los datos del usuario logueado
+router.get('/success', loginRefresh)
 
-// Ruta de ejemplo para redireccionar luego de inciar sesion, deberia ser una ruta de la aplicacion. (Se cambiara despues)
-router.get('/success', (req, res) => {
-  res.status(200).send({ result: req.user })
-})
-
-router.get('/failure', (req, res) => {
+router.get('/failure', (_, res) => {
   res.send('Ocurrió un error al loguear con Google')
 })
 
+//Renovar el token 
 
+//TODO: agregar renewAuthtoken para los usuarios que se logean por medio de form
+router.get('/renew', verifyToken, renewToken)
+
+//Logout
+router.post('/logout', (req, res) => {
+  req.logout();
+  res.status(200).send({ message: 'Logout exitoso' })
+})
 export default router;

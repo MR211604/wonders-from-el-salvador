@@ -1,7 +1,7 @@
 import { connection } from "../database/db-connection.js";
 import initModels from "../database/models/init-models.js";
 
-const { place: PlaceModel } = initModels(connection)
+const { place: PlaceModel, place_details: PlaceDetails } = initModels(connection)
 
 export class PlaceRepository {
 
@@ -12,7 +12,17 @@ export class PlaceRepository {
   }
 
   static getPlace(id) {
-    return PlaceModel.findByPk(id);
+    // Obteniendo los detalles del lugar populando el place principal
+    return PlaceModel.findAll({
+      nest: true,
+      raw: true,
+      include: [{
+        model: PlaceDetails,
+        as: 'place_details',
+        where: { place_id: id },
+        required: true,        
+      }]
+    })
   }
 
 }

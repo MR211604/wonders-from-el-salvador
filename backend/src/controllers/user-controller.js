@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 export async function registerUser(req, res) {
   const { username, password, email } = req.body
   try {
-    const response = AuthRepository.createUser({ username, password, email })
+    const response = await AuthRepository.createUser({ username, password, email })
     return res.status(201).json({
       ok: true,
       message: 'Usuario creado con éxito',
@@ -25,20 +25,13 @@ export async function loginUser(req, res) {
   const { email, password } = req.body
   try {
 
-    const response = AuthRepository.loginUser({ email, password })
-
-    const token = jwt.sign({ id: response.id, username: response.username }, process.env.JWT_SECRET, { expiresIn: '24h' })
+    const response = await AuthRepository.loginUser({ email, password })
+    const token = jwt.sign({ id: response.dataValues.id, username: response.dataValues.name }, process.env.JWT_SECRET, { expiresIn: '24h' })
     return res
-      .cookie('token', token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 1000 * 60 * 60
-      })
       .status(200).json({
         ok: true,
         message: 'Usuario logueado con éxito',
-        response,
+        user: { id: response.dataValues.id, username: response.dataValues.name, email: response.dataValues.email },
         token
       })
 
@@ -50,4 +43,52 @@ export async function loginUser(req, res) {
       return res.status(500).send({ ok: false, error: 'Error interno' })
     }
   }
+}
+
+export async function loginRefresh(req, res) {
+  try {
+    if (req.user) {
+      const token = jwt.sign({ id: req.user.id, username: req.user.displayName }, process.env.JWT_SECRET, { expiresIn: '24h' })
+      return res.
+        cookie('token', token, {
+          httpOnly: true,
+          // secure: process.env.NODE_ENV === 'production',
+          sameSite: 'strict',
+          maxAge: 1000 * 60 * 60
+        })
+        .status(200).json({
+          ok: true,
+          message: "Usuario logueado con éxito",
+          user: req.user,
+          token
+        })
+    }
+
+  } catch (error) {
+    console.log('error: ', error)
+    return res.status(500).send({ error: 'Error interno' })
+  }
+}
+
+export async function renewToken(req, res) {
+  try {
+    if (req.user) {
+      const { id } = req.user
+      const { user, token } = await AuthRepository.renewToken(id)
+      return res
+        .cookie('token', token, {
+          httpOnly: true,
+          // secure: process.env.NODE_ENV === 'production',
+          sameSite: 'strict',
+          maxAge: 1000 * 60 * 60
+        })
+        .status(200).
+        json({ ok: true, message: 'Renew', token, user })
+    }
+
+  } catch (error) {
+    console.log('error: ', error)
+    return res.status(500).send({ error: 'Error interno' })
+  }
+
 }
