@@ -53,17 +53,20 @@ export function AuthProvider({ children }) {
   }
 
   const fetchUserData = useCallback(async () => {
-    console.log('estoy ejectuando el useCallback')
+
+    const token = localStorage.getItem('token')
+
     const response = await fetch('http://localhost:3000/api/auth/success', {
       method: "GET",
       credentials: "include",
       headers: {
+        'x-token': token,
         "Content-Type": "application/json",
         "Access-Control-Allow-Credentials": true,
       }
     })
     if (!response.ok) {
-      console.log('No se pudo obtener la información del usuario')
+      console.log('No se pudo obtener la información del usuario y no hay token')
       setAuth({
         id: null,
         checking: false,

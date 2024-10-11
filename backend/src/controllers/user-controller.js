@@ -47,6 +47,9 @@ export async function loginUser(req, res) {
 
 export async function loginRefresh(req, res) {
   try {
+
+    const token = req.header('x-token')
+
     if (req.user) {
       const token = jwt.sign({ id: req.user.id, username: req.user.displayName }, process.env.JWT_SECRET, { expiresIn: '24h' })
       return res.
@@ -62,9 +65,25 @@ export async function loginRefresh(req, res) {
           user: req.user,
           token
         })
-    } else {
-      return res.status(400).send({ ok: false, error: 'No se pudo obtener el usuario' })
     }
+    if (token) {
+      const payload = jwt.verify(token, process.env.JWT_SECRET)
+      const { id } = payload
+      const { user } = await AuthRepository.renewToken(id)
+      return res.
+        cookie('token', token, {
+          httpOnly: true,
+          sameSite: 'strict',
+          maxAge: 1000 * 60 * 60
+        })
+        .status(200).json({
+          ok: true,
+          message: "Usuario logueado con éxito",
+          token,
+          user: { id: user.dataValues.id, displayName: user.dataValues.name, email: user.dataValues.email }
+        })
+    }
+    return res.status(401).send({ ok: false, error: 'No se pudo obtener el usuario' })
   } catch (error) {
     console.log('error: ', error)
     return res.status(500).send({ ok: false, error: 'Error interno' })
