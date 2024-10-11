@@ -25,6 +25,7 @@ export const fetchWithToken = async (endpoint, data, method = 'GET') => {
     const response = await fetch(`${baseURL}/${endpoint}`, {
       headers: {
         'x-token': token,
+        "Content-Type": "application/json",
         "Access-Control-Allow-Credentials": true,
       },
       credentials: "include"
