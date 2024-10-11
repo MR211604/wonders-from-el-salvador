@@ -26,12 +26,12 @@ export async function loginUser(req, res) {
   try {
 
     const response = await AuthRepository.loginUser({ email, password })
-    const token = jwt.sign({ id: response.dataValues.id, username: response.dataValues.name }, process.env.JWT_SECRET, { expiresIn: '24h' })
+    const token = jwt.sign({ id: response.dataValues.id, displayName: response.dataValues.name }, process.env.JWT_SECRET, { expiresIn: '24h' })
     return res
       .status(200).json({
         ok: true,
         message: 'Usuario logueado con éxito',
-        user: { id: response.dataValues.id, username: response.dataValues.name, email: response.dataValues.email },
+        user: { id: response.dataValues.id, displayName: response.dataValues.name, email: response.dataValues.email },
         token
       })
 
@@ -62,11 +62,12 @@ export async function loginRefresh(req, res) {
           user: req.user,
           token
         })
+    } else {
+      return res.status(400).send({ ok: false, error: 'No se pudo obtener el usuario' })
     }
-
   } catch (error) {
     console.log('error: ', error)
-    return res.status(500).send({ error: 'Error interno' })
+    return res.status(500).send({ ok: false, error: 'Error interno' })
   }
 }
 

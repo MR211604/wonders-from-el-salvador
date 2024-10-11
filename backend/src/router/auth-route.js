@@ -28,23 +28,27 @@ router.get('/protected', verifyToken, (req, res) => {
 
 // Ruta que nos servira para obtener los datos del usuario logueado
 router.get('/success', loginRefresh)
+// router.get('/renew', verifyToken, renewToken)
 
 router.get('/failure', (_, res) => {
   res.send('Ocurrió un error al loguear con Google')
 })
 
-//Renovar el token 
-
-//TODO: agregar renewAuthtoken para los usuarios que se logean por medio de form
-router.get('/renew', verifyToken, renewToken)
 
 //Logout
-router.get('/logout', (_, res) => {
+router.get('/logout', async (req, res) => {
   try {
-    return res.cookie('token', 'none', {
-      expires: new Date(Date.now()),
-      httpOnly: true
-    }).status(200).send({ ok: true, message: 'Logout exitoso' })
+
+    //Limpiando la sesion del usuario
+    req.logout(function (err) {
+      if (err) { return next(err); }
+      res.redirect('/');
+    });
+    //Limpiando las cookies
+    res.clearCookie('connect.sid');
+    res.clearCookie('token');
+
+    return res.status(200).send({ ok: true, message: 'Sesión cerrada con éxito' })
   } catch (error) {
     console.log('error: ', error)
     return res.status(500).send({ ok: false, error: 'Error interno' })

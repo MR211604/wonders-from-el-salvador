@@ -2,13 +2,14 @@ import jwt from 'jsonwebtoken'
 
 export function verifyToken(req, res, next) {
 
-  const token = req.header('x-token')
-
-  if (!token) {
-    return res.status(401).send({ ok: false, error: 'El token no fue proporcionado' })
-  }
 
   try {
+    const token = req.header('x-token')
+
+    if (!token) {
+      return res.status(401).send({ ok: false, error: 'El token no fue proporcionado' })
+    }
+
     const payload = jwt.verify(token, process.env.JWT_SECRET)
     req.user = payload
     return next();
