@@ -9,6 +9,8 @@
 - **Guevara Moz, Bryan Adonay** - GM202186
 - **González León, Cindy Valeria** - GL221827
   
+## PDF con las correcciones de las observaciones realizadas en la Fase 1.
+[PDF de Fase Final del Proyecto de Cátedra LIC](../MH220744/Fase%20Final%20del%20Proyecto%20de%20Cátedra%20LIC.pdf)
 
 ## Enlaces
 
