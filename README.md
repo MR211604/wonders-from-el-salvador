@@ -21,6 +21,11 @@
 - **Link de los diseños Mock Ups:**  
   [Figma Mockups](https://www.figma.com/design/8V9Hg1JWRZadneOveGcw9y/Dise%C3%B1o-de-LIC?node-id=76-740&m=dev&t=gVi3jsnZlmzWIR0v-1)
 
+- **Link manual de usuario:**
+  
+- **Link manual técnico:** 
+  https://www.canva.com/design/DAGTZQEf8nw/ydzDKALfWDZY1oFUW86GHw/edit?utm_content=DAGTZQEf8nw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 
 ## Tipo de Licencia Creative Commons:
 **Licencia CC BY-NC-SA 4.0**
