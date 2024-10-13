@@ -29,7 +29,9 @@ export function Carrousel({ slides }) {
 
           <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${current * 100}%)` }}>
             {slides.map((slide, index) => (
-              <img key={index} className="w-full h-full object-cover" src={slide} alt={`Slide ${index}`} />
+              <>
+                <img key={index} className="w-full h-full object-cover" src={slide} alt={`Slide ${index}`} />
+              </>
             ))}
           </div>
 

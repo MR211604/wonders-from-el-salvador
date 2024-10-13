@@ -7,18 +7,29 @@ import bcrypt from 'bcryptjs'
 const { user: UserModel } = initModels(connection)
 
 export class AuthRepository {
-  static async createUser({ username, email, password }) {
+  static async createUser({ username, email, password, confirmPassword }) {
 
     ValidationsRepository.ValidateUsername(username);
     ValidationsRepository.validateEmail(email);
     ValidationsRepository.validatePassword(password);
-
-    const foundUser = await UserModel.findOne({ where: { email } });
-    if (foundUser) throw new Error("El email ingresado ya está registrado");
+    ValidationsRepository.validatePassword(confirmPassword);
+    ValidationsRepository.comparePasswords(password, confirmPassword);
+    await ValidationsRepository.validateUserExistence(email, false);
 
     const hashedPassword = bcrypt.hashSync(password, 10);
 
     const user = await UserModel.create({ name: username, email, hashed_password: hashedPassword });
+
+    return { user }
+  }
+
+  static async loginOauthUser({ username, email }) {
+
+    const foundOauth = await UserModel.findOne({ where: { email } });
+    if (foundOauth) return { user: foundOauth.id }
+
+    // No se almacena la contraseña de un usuario OAuth
+    const user = await UserModel.create({ name: username, email, hashed_password: 'oauth_user' });
 
     return { user: user.id }
   }
@@ -27,12 +38,10 @@ export class AuthRepository {
 
     ValidationsRepository.validateEmail(email);
     ValidationsRepository.validatePassword(password);
+    await ValidationsRepository.validateUserExistence(email)
 
     const user = await UserModel.findOne({ where: { email } });
-    if (!user) throw new Error("Usuario o contraseña incorrectos");
-
-    const isPasswordValid = bcrypt.compareSync(password, user.hashed_password);
-    if (!isPasswordValid) throw new Error("Usuario o contraseña incorrectos");
+    ValidationsRepository.validatePassword(password, user.hashed_password);
 
     // Omitir la contraseña del objeto de usuario
     const { hashed_password: _, ...userData } = user;

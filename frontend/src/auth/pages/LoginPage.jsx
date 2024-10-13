@@ -1,9 +1,11 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../provider/AuhProvider"
-
+import { useNavigate } from 'react-router-dom'
+import toast, { Toaster } from "react-hot-toast";
 export function LoginPage() {
 
   const { loginWithGoogle, login } = useContext(AuthContext)
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -23,7 +25,11 @@ export function LoginPage() {
     const { email, password } = form
     const response = await login({ email, password })
     if (response.ok) {
-      console.log('todo fue bien, esta es la response', response)
+      toast.success('Usuario logueado con éxito')
+      navigate('/', { replace: true })
+    } else {
+      navigate('/auth/login', { replace: true })
+      toast.error(`Error: ${response.error}`)
     }
   }
 
@@ -34,8 +40,9 @@ export function LoginPage() {
 
   return (
     <section className="h-screen bg-gray-50 ">
+      <Toaster />
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
+        <a href="/" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
           <img className="w-8 h-8 mr-2" src="/icono-wonders-from-el-salvador.svg" alt="WFES Logo" />
           Wonders from El Salvador
         </a>
@@ -76,7 +83,7 @@ export function LoginPage() {
 
 
               <p className="text-sm font-light text-gray-500">
-                ¿Aún no tienes una cuenta? <a href="#" className="font-medium text-blue-600 hover:underline">Regístrate aquí</a>
+                ¿Aún no tienes una cuenta? <a href="/auth/register" className="font-medium text-blue-600 hover:underline">Regístrate aquí</a>
               </p>
             </form>
           </div>

@@ -3,20 +3,20 @@ import { ValidationError } from "../repositories/error-repository.js"
 import jwt from 'jsonwebtoken'
 
 export async function registerUser(req, res) {
-  const { username, password, email } = req.body
+  const { username, email, password, confirmPassword } = req.body
   try {
-    const response = await AuthRepository.createUser({ username, password, email })
+    const response = await AuthRepository.createUser({ username, email, password, confirmPassword })
     return res.status(201).json({
       ok: true,
       message: 'Usuario creado con éxito',
-      response
+      user: { id: response.user.dataValues.id, displayName: response.user.dataValues.name, email: response.user.dataValues.email }
     })
   } catch (error) {
     if (error instanceof ValidationError) {
-      return res.status(400).send({ error: error.message })
+      return res.status(400).send({ ok: false, error: error.message })
     } else {
       console.log('error: ', error)
-      return res.status(500).send({ error: 'Error interno' })
+      return res.status(500).send({ ok: false, error: 'Error interno' })
     }
   }
 }
@@ -24,7 +24,6 @@ export async function registerUser(req, res) {
 export async function loginUser(req, res) {
   const { email, password } = req.body
   try {
-
     const response = await AuthRepository.loginUser({ email, password })
     const token = jwt.sign({ id: response.dataValues.id, displayName: response.dataValues.name }, process.env.JWT_SECRET, { expiresIn: '24h' })
     return res
@@ -34,7 +33,6 @@ export async function loginUser(req, res) {
         user: { id: response.dataValues.id, displayName: response.dataValues.name, email: response.dataValues.email },
         token
       })
-
   } catch (error) {
     if (error instanceof ValidationError) {
       return res.status(400).send({ ok: false, error: error.message })
@@ -55,7 +53,6 @@ export async function loginRefresh(req, res) {
       return res.
         cookie('token', token, {
           httpOnly: true,
-          // secure: process.env.NODE_ENV === 'production',
           sameSite: 'strict',
           maxAge: 1000 * 60 * 60
         })
@@ -66,7 +63,7 @@ export async function loginRefresh(req, res) {
           token
         })
     }
-    if (token) {
+    if (token !== null) {
       const payload = jwt.verify(token, process.env.JWT_SECRET)
       const { id } = payload
       const { user } = await AuthRepository.renewToken(id)
@@ -85,30 +82,6 @@ export async function loginRefresh(req, res) {
     }
     return res.status(401).send({ ok: false, error: 'No se pudo obtener el usuario' })
   } catch (error) {
-    console.log('error: ', error)
     return res.status(500).send({ ok: false, error: 'Error interno' })
   }
-}
-
-export async function renewToken(req, res) {
-  try {
-    if (req.user) {
-      const { id } = req.user
-      const { user, token } = await AuthRepository.renewToken(id)
-      return res
-        .cookie('token', token, {
-          httpOnly: true,
-          // secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
-          maxAge: 1000 * 60 * 60
-        })
-        .status(200).
-        json({ ok: true, message: 'Renew', token, user })
-    }
-
-  } catch (error) {
-    console.log('error: ', error)
-    return res.status(500).send({ error: 'Error interno' })
-  }
-
 }

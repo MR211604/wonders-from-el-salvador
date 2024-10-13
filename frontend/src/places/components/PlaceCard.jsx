@@ -1,6 +1,7 @@
 import { snakeToNormal } from "../../helpers/snakeToNormal";
+import { StarComponent } from "./StarComponent";
 
-export function PlaceCard({ id, name, city, country, description }) {
+export function PlaceCard({ id, name, city, user_ratings, description }) {
 
   return (
     <>
@@ -10,8 +11,9 @@ export function PlaceCard({ id, name, city, country, description }) {
           <h3 className="text-xl font-semibold text-black">
             <a href={`/place/${id}`}>{city}, {snakeToNormal(name)}</a></h3>
           <p className="mt-1 text-sm text-gray-400">{description}</p>
-        </div >
-      </div >
+        </div>
+        <StarComponent user_ratings={user_ratings} />
+      </div>
     </>
   )
 }

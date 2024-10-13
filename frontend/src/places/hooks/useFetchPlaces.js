@@ -6,21 +6,35 @@ export function useFetchPlaces() {
   const [pages, setPages] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState();
+  const [search, setSearch] = useState('');
+  const [city, setCity] = useState('');
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const response = await fetch(`http://localhost:3000/api/places/getPlaces?page=${currentPage}&limit=6`);
-      const data = await response.json();
-      if (data.places.length === 0) {
-        setError('No hay lugares disponibles')
+    const handler = setTimeout(() => {
+      const fetchData = async () => {
+        setLoading(true);
+        try {
+          const response = await fetch(`http://localhost:3000/api/places/getPlaces?page=${currentPage}&limit=6&place=${city}&searchPlace=${search}`);
+          const data = await response.json();
+          if (data.places.length === 0) {
+            setError('No hay lugares disponibles')
+          }
+          setPlaces(data.places);
+          setPages(data.pagination.totalPage);
+        } catch (error) {
+          setError('Error al obtener los datos')
+        } finally {
+          setLoading(false)
+        }
       }
-      setPlaces(data.places);
-      setPages(data.pagination.totalPage);
-      setLoading(false);
-    }
-    fetchData()
-  }, [currentPage])
+      fetchData()
+    }, 350)
+    return () => clearTimeout(handler)
+  }, [currentPage, search, city])
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [city, search])
 
   return {
     loading,
@@ -28,6 +42,9 @@ export function useFetchPlaces() {
     pages,
     error,
     currentPage,
-    setCurrentPage
+    search,
+    setCurrentPage,
+    setSearch,
+    setCity
   }
 }

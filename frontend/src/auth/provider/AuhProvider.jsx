@@ -29,26 +29,15 @@ export function AuthProvider({ children }) {
         id: response.user.id,
         checking: false,
         logged: true,
-        name: response.user.username,
+        name: response.user.displayName,
         emai: response.user.email
       })
-      return response
     }
+    return response
   }
 
-  const register = async ({ name, email, password }) => {
-    const response = await fetchWithoutToken('auth/register', { name, email, password }, 'POST')
-    if (response.ok) {
-      localStorage.setItem('token', response.token)
-      setAuth({
-        id: response.user.id,
-        checking: false,
-        logged: true,
-        name: response.user.name,
-        email: response.user.email
-      })
-      return true
-    }
+  const register = async ({ username, email, password, confirmPassword }) => {
+    const response = await fetchWithoutToken('auth/register', { username, email, password, confirmPassword }, 'POST')
     return response
   }
 
@@ -65,8 +54,8 @@ export function AuthProvider({ children }) {
         "Access-Control-Allow-Credentials": true,
       }
     })
-    if (!response.ok) {
-      console.log('No se pudo obtener la información del usuario y no hay token')
+    const data = await response.json()
+    if (!data.ok) {
       setAuth({
         id: null,
         checking: false,
@@ -74,8 +63,8 @@ export function AuthProvider({ children }) {
         name: null,
         email: null,
       })
+      return false
     }
-    const data = await response.json()
     localStorage.setItem('token', data.token)
     setAuth({
       id: data.user.id,
