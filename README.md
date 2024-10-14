@@ -22,11 +22,11 @@
   [Figma Mockups](https://www.figma.com/design/8V9Hg1JWRZadneOveGcw9y/Dise%C3%B1o-de-LIC?node-id=76-740&m=dev&t=gVi3jsnZlmzWIR0v-1)
 
 
-- **Link manual de usuario:**
+- **Link manual de usuario:**  
    [Manual de usuario](https://www.canva.com/design/DAGTZVQufQ8/EEm1_CLn1tpmniGK-qdP6w/view?utm_content=DAGTZVQufQ8&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
   
-- **Link manual técnico:** 
+- **Link manual técnico:**  
   [Manual técnico](https://www.canva.com/design/DAGTZQEf8nw/MM0lvGzk280NNkN3oSi7gA/view?utm_content=DAGTZQEf8nw&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
 ## Tipo de Licencia Creative Commons:
