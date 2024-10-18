@@ -1,18 +1,21 @@
-import { useMemo, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom"
+import { useContext, useMemo, useState } from "react";
+import { useParams } from "react-router-dom"
 import { snakeToNormal } from "../../helpers/snakeToNormal";
 import { TbMapSearch } from "react-icons/tb";
 import { NavBar } from "../../ui";
 import { StarComponent } from "../components/StarComponent";
+import { AuthContext } from "../../auth/provider/AuhProvider";
 
 
 export function PlacePage() {
   //Luego cambiaremos esto con useQuery
+  const { auth } = useContext(AuthContext) 
   const [placeData, setPlaceData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null)
-
   const { place_id } = useParams();
+  const averageRating = placeData?.user_ratings?.reduce((sum, rating) => sum + rating.rating, 0) / placeData?.user_ratings?.length;
+  const avgRating = (averageRating % 1) >= 0.6 ? Math.ceil(averageRating) : Math.floor(averageRating);
 
   useMemo(() => {
     const fetchHeroById = async () => {
@@ -51,7 +54,7 @@ export function PlacePage() {
         <div className="flex sm:flex-col sm:justify-center lg:flex-row m-10">
           <img className="lg:w-[480px] lg:h-[240px] sm:h-[2/3] sm:w-[2/3] object-fit" src={`/images/places/${placeData.name}.jpg`} alt="" />
           <div className="w-full justify-center place-content-center sm:mt-10 lg:mt-0 lg:ml-12">
-            <div> <StarComponent user_ratings={placeData.user_ratings} /> </div>
+            <div className="flex flex-row items-center"> <StarComponent rating={avgRating} /> <span className="ml-2">{ `(${placeData?.user_ratings?.length })` }</span>  </div>
             <h1 className="lg: ml-5 sm:ml-0 font-bold text-xl">{snakeToNormal(placeData.name)}, {placeData.city}</h1>
             <h2 className="mt-2">{placeData.description}</h2>
             <h2 className="font-bold mt-6"><span className="text-2xl">Costo: ${placeData.min_price} a ${placeData.max_price}</span></h2>
@@ -64,6 +67,19 @@ export function PlacePage() {
         </div>
 
         <div className="py-3 flex flex-col m-10">
+          <div>
+            <h1 className="text-2xl font-bold">Comentarios y valoraciones</h1>
+            {
+              placeData.user_ratings.map((rating, index) => (
+                <div key={index} className="flex flex-row my-4 text-left">
+                  <span className="font-bold">{rating.user.name}: <StarComponent rating={rating.rating} /> </span>
+                  {
+                    auth && auth.name === rating.user.name && <a className="text-teal-700 hover:underline" href="#">Cambiar valoracion</a>
+                  }
+                </div>
+              ))
+            }
+          </div>
           <div className="flex items-center my-3">
             <img className="rounded-full w-[120px] h-[120px] aspect-[2/2]" src="/images/directions.jpg" alt="como llegar - img" />
             <h2 className="ml-5 font-bold">Como llegar: <span className="font-normal">{placeData.place_details[0].direction}</span></h2>
