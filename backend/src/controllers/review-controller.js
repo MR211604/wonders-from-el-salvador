@@ -17,3 +17,21 @@ export async function getReviews(req, res) {
     }
   }
 }
+
+export async function createReview(req, res) {
+  try {
+    const { placeId, userId, rating } = req.body;
+
+    await ReviewRepository.createReview(placeId, userId, rating);
+
+    return res.status(201).json({ ok: true });
+
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return res.status(400).send({ ok: false, error: error.message });
+    } else {
+      console.log('error interno: ', error)
+      return res.status(500).send({ ok: false, error: 'Error interno' });
+    }
+  }
+}

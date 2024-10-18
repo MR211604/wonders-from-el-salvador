@@ -53,7 +53,6 @@ export class ValidationsRepository {
 
   static validatePlaceId(placeId) {
     if (!placeId) throw new ValidationError("El id del lugar es requerido");
-  }
-  
+  }  
 
 }

@@ -53,6 +53,14 @@ export class PlaceRepository {
         as: 'user_ratings',
         where: { place_id: id },
         required: false,
+        include: [
+          {
+            model: UserModel,
+            as: 'user',
+            required: true,
+            attributes: ['name', 'email']
+          }
+        ]
       }],
     })
     // }
