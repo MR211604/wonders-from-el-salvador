@@ -48,7 +48,7 @@ export async function loginRefresh(req, res) {
 
     const token = req.header('x-token')
 
-    if (req.user) {
+    if (req.user) {      
       const token = jwt.sign({ id: req.user.id, username: req.user.displayName }, process.env.JWT_SECRET, { expiresIn: '24h' })
       return res.
         cookie('token', token, {

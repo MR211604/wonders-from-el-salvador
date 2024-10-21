@@ -20,9 +20,9 @@ export async function getReviews(req, res) {
 
 export async function createReview(req, res) {
   try {
-    const { placeId, userId, rating } = req.body;
-
-    await ReviewRepository.createReview(placeId, userId, rating);
+    const { placeId, userId, rating, comment } = req.body;
+    
+    await ReviewRepository.createReview(placeId, userId, rating, comment);
 
     return res.status(201).json({ ok: true });
 

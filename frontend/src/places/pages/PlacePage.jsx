@@ -1,23 +1,30 @@
-import { useContext, useMemo, useState } from "react";
+import { useContext, useMemo, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { snakeToNormal } from "../../helpers/snakeToNormal";
 import { TbMapSearch } from "react-icons/tb";
 import { NavBar } from "../../ui";
 import { StarComponent } from "../components/StarComponent";
-import { AuthContext } from "../../auth/provider/AuhProvider";
+import { AuthContext } from "../../auth/provider/AuthProvider";
+import { fetchWithToken } from "../../helpers/fetch";
 
 
 export function PlacePage() {
-  //Luego cambiaremos esto con useQuery
-  const { auth } = useContext(AuthContext) 
+  const { auth } = useContext(AuthContext)
+  const { place_id } = useParams();
+
   const [placeData, setPlaceData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null)
-  const { place_id } = useParams();
+  const [editRatingId, setEditRatingId] = useState(null);
+
+  //Rating promedio general
   const averageRating = placeData?.user_ratings?.reduce((sum, rating) => sum + rating.rating, 0) / placeData?.user_ratings?.length;
   const avgRating = (averageRating % 1) >= 0.6 ? Math.ceil(averageRating) : Math.floor(averageRating);
 
-  useMemo(() => {
+  const [editComment, setEditComment] = useState(undefined)
+  const [editRating, setEditRating] = useState(0)
+
+  useEffect(() => {
     const fetchHeroById = async () => {
       try {
         const response = await fetch(`http://localhost:3000/api/places/getPlaceById/${place_id}`);
@@ -33,7 +40,7 @@ export function PlacePage() {
       }
     }
     fetchHeroById()
-  }, [place_id])
+  }, [place_id, editRatingId])
 
 
   if (loading) {
@@ -44,17 +51,36 @@ export function PlacePage() {
     return <h1>{error}</h1>
   }
 
+  const handleComment = (e) => {
+    setEditComment(e.target.value)
+  }
+
+  const handleRatingChange = (newRating) => {
+    setEditRating(newRating)
+  }
+
+  const handleRating = async ({ id, user_id, place_id, rating, comment }) => {
+    if (editRatingId === id) {
+      try {
+        await fetchWithToken('reviews/createReview', { placeId: place_id, userId: user_id, rating: editRating > 0 ? editRating : rating, comment: editComment ? editComment : comment }, 'POST')
+        setEditRatingId(null)
+      } catch (error) {
+        setError(error)
+      }
+    } else {
+      setEditRatingId(id)
+    }
+  }
 
   return (
     <>
-
       <NavBar />
 
       <div className="animate__animated animate__fadeIn">
         <div className="flex sm:flex-col sm:justify-center lg:flex-row m-10">
           <img className="lg:w-[480px] lg:h-[240px] sm:h-[2/3] sm:w-[2/3] object-fit" src={`/images/places/${placeData.name}.jpg`} alt="" />
           <div className="w-full justify-center place-content-center sm:mt-10 lg:mt-0 lg:ml-12">
-            <div className="flex flex-row items-center"> <StarComponent rating={avgRating} /> <span className="ml-2">{ `(${placeData?.user_ratings?.length })` }</span>  </div>
+            <div className="flex flex-row items-center"> <StarComponent interactive={false} rating={avgRating} /> <span className="ml-2">{`(${placeData?.user_ratings?.length})`}</span>  </div>
             <h1 className="lg: ml-5 sm:ml-0 font-bold text-xl">{snakeToNormal(placeData.name)}, {placeData.city}</h1>
             <h2 className="mt-2">{placeData.description}</h2>
             <h2 className="font-bold mt-6"><span className="text-2xl">Costo: ${placeData.min_price} a ${placeData.max_price}</span></h2>
@@ -70,14 +96,27 @@ export function PlacePage() {
           <div>
             <h1 className="text-2xl font-bold">Comentarios y valoraciones</h1>
             {
-              placeData.user_ratings.map((rating, index) => (
-                <div key={index} className="flex flex-row my-4 text-left">
-                  <span className="font-bold">{rating.user.name}: <StarComponent rating={rating.rating} /> </span>
-                  {
-                    auth && auth.name === rating.user.name && <a className="text-teal-700 hover:underline" href="#">Cambiar valoracion</a>
+              placeData.user_ratings
+                .sort((a, b) => {
+                  if (auth.id) {
+                    if (a.user_id === auth.id && b.user_id !== auth.id) return -1;
+                    if (a.user_id !== auth.id && b.user_id === auth.id) return 1;
                   }
-                </div>
-              ))
+                  return 0;
+                })
+                .map((rating, index) => (
+                  <div key={index} className="flex flex-row my-4 text-left">
+                    <span className="font-bold">{`${auth.name === rating.user.name ? `(Tú) ${rating.user.name}` : rating.user.name}`}:
+                      <h2 className="font-normal">{rating.comment}</h2>
+                      <StarComponent interactive={editRatingId === rating.id} rating={rating.rating} editRating={editRating} comment={rating.comment} editComment={editComment} handleRating={handleRatingChange} handleComment={handleComment} /> </span>
+                    {
+                      auth && auth.name === rating.user.name &&
+                      <a className="text-teal-700 hover:underline" href="#" onClick={() => handleRating(rating)}>
+                        {rating.id === editRatingId ? `Realizar cambios` : `Editar valoración`}
+                      </a>
+                    }
+                  </div>
+                ))
             }
           </div>
           <div className="flex items-center my-3">

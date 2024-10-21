@@ -53,7 +53,8 @@ export function AuthProvider({ children }) {
         "Content-Type": "application/json",
         "Access-Control-Allow-Credentials": true,
       }
-    })
+    })    
+    
     const data = await response.json()
     if (!data.ok) {
       setAuth({

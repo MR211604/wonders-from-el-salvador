@@ -25,8 +25,8 @@ export class AuthRepository {
 
   static async loginOauthUser({ username, email }) {
 
-    const foundOauth = await UserModel.findOne({ where: { email } });
-    if (foundOauth) return { user: foundOauth.id }
+    const foundOauth = await UserModel.findOne({ where: { email } });    
+    if (foundOauth) return { user: foundOauth.dataValues.id }
 
     // No se almacena la contraseña de un usuario OAuth
     const user = await UserModel.create({ name: username, email, hashed_password: 'oauth_user' });

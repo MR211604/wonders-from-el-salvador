@@ -6,7 +6,7 @@ export function Footer() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="/" className="flex items-center">
-              <img src="/public/icono-wonders-from-el-salvador.svg" className="h-8 me-3" alt="WFES Logo" />
+              <img src="/icono-wonders-from-el-salvador.svg" className="h-8 me-3" alt="WFES Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Wonders From El Salvador</span>
             </a>
             <p className="text-xl mt-2 max-w-[700px] text-slate-600">

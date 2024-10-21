@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
-import { AuthContext } from "../../auth/provider/AuhProvider";
+import { AuthContext } from "../../auth/provider/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast'
 
 export const NavBar = () => {

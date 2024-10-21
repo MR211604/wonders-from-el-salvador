@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { AuthContext } from "../provider/AuhProvider"
+import { AuthContext } from "../provider/AuthProvider"
 import { useNavigate } from 'react-router-dom'
 import toast, { Toaster } from "react-hot-toast";
 export function LoginPage() {

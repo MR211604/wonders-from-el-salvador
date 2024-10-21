@@ -5,7 +5,7 @@ import { LoginPage, RegisterPage } from '../auth/pages';
 import { TestComponent } from '../places/components/TestComponent';
 import { PlacePage } from '../places/pages/PlacePage';
 import { useContext } from 'react';
-import { AuthContext } from '../auth/provider/AuhProvider';
+import { AuthContext } from '../auth/provider/AuthProvider';
 import { useEffect } from 'react';
 
 export const AppRouter = () => {
@@ -17,7 +17,7 @@ export const AppRouter = () => {
   }, [fetchUserData])
 
   if (auth.checking) {
-    
+    return null
   }
   return (
     <>

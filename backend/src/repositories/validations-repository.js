@@ -53,6 +53,16 @@ export class ValidationsRepository {
 
   static validatePlaceId(placeId) {
     if (!placeId) throw new ValidationError("El id del lugar es requerido");
-  }  
+  }
+
+  static validateComment(comment) {
+    if (comment.trim().length === 0) throw new ValidationError("El comentario no puede estar vacío");
+  }
+
+  static validateRating(rating) {
+    if (!rating) throw new ValidationError("La calificación es requerida");
+
+    if (rating < 1 || rating > 5) throw new ValidationError("La calificación debe estar entre 1 y 5");
+  }
 
 }

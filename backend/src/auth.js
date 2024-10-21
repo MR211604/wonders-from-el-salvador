@@ -10,8 +10,8 @@ passport.use(new GoogleStrategy({
 },
   async function (request, accessToken, refreshToken, profile, done) {
     try {
-      const { id } = await AuthRepository.loginOauthUser({ username: profile.displayName, email: profile.email })
-      return done(null, { ...profile, id: id });
+      const { user: id } = await AuthRepository.loginOauthUser({ username: profile.displayName, email: profile.email })      
+      return done(null, { ...profile, id });
     } catch (error) {
       console.log('error al guardar el usuario en la db: ', error)
       return done(error)

@@ -26,8 +26,10 @@ export class ReviewRepository {
     return reviews
   }
 
-  static async createReview(placeId, userId, rating) {
+  static async createReview(placeId, userId, rating, comment) {
     ValidationsRepository.validatePlaceId(placeId)
+    ValidationsRepository.validateRating(rating)
+    ValidationsRepository.validateComment(comment)
 
     //Si un usuario ya habia votado previamente, se actualiza la calificacion
     const [userRating] = await UserRatingModel.findAll({
@@ -36,10 +38,11 @@ export class ReviewRepository {
         user_id: userId
       }
     })
-
+    
     if (userRating) {
       await UserRatingModel.update({
-        rating
+        rating,
+        comment
       }, {
         where: {
           place_id: placeId,
