@@ -1,6 +1,6 @@
-import { Sequelize } from "sequelize"; 
+import { Sequelize } from 'sequelize'
 
-export const connection = new Sequelize('proyectolic', 'root', 'root', {
+export const connection = new Sequelize('proyectolic', 'root', 'password', {
   host: 'localhost',
   dialect: 'mysql'
 })

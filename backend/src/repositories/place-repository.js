@@ -1,13 +1,12 @@
-import { Op } from "sequelize";
-import { connection } from "../database/db-connection.js";
-import initModels from "../database/models/init-models.js";
+import { Op } from 'sequelize'
+import { connection } from '../database/db-connection.js'
+import initModels from '../database/models/init-models.js'
 
 const { place: PlaceModel, place_details: PlaceDetails, user_rating: UserRatingModel, user: UserModel } = initModels(connection)
 
 export class PlaceRepository {
-
-  static async getPlaces(offset, limit, place, searchPlace) {
-    let where = {}
+  static async getPlaces (offset, limit, place, searchPlace) {
+    const where = {}
     if (place) {
       where.city = {
         [Op.like]: `%${place}%`
@@ -18,7 +17,7 @@ export class PlaceRepository {
         .trim()
         .replace(/\s+/g, ' ')
         .replace(/\s/g, '_')
-        .replace(/[^\w_]/g, '');
+        .replace(/[^\w_]/g, '')
       where.name = {
         [Op.like]: `%${queryText}%`
       }
@@ -29,24 +28,24 @@ export class PlaceRepository {
     const places = await PlaceModel.findAll({
       include: [{
         model: UserRatingModel,
-        as: 'user_ratings',
+        as: 'user_ratings'
       }],
       where,
       offset,
       limit
     })
-    return [places, count];
+    return [places, count]
   }
 
-  static getPlace(id) {
+  static getPlace (id) {
     // Obteniendo los detalles del lugar populando el place principal
     return PlaceModel.findAll({
-      nest: true,      
+      nest: true,
       include: [{
         model: PlaceDetails,
         as: 'place_details',
         where: { place_id: id },
-        required: true,
+        required: true
       },
       {
         model: UserRatingModel,
@@ -61,9 +60,7 @@ export class PlaceRepository {
             attributes: ['name', 'email']
           }
         ]
-      }],
+      }]
     })
-    // }
   }
-
 }

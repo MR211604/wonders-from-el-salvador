@@ -1,13 +1,12 @@
-import { Router } from "express";
-import passport from "passport";
-import "../auth.js";
-import { verifyToken } from "../middlewares/verify-token.js";
-import { loginRefresh, loginUser, registerUser } from "../controllers/user-controller.js";
+import { Router } from 'express'
+import passport from 'passport'
+import '../auth.js'
+import { verifyToken } from '../middlewares/verify-token.js'
+import { loginRefresh, loginUser, registerUser } from '../controllers/user-controller.js'
 
-const router = Router();
+const router = Router()
 
-
-//Autentificacion con Google
+// Autentificacion con Google
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
 
 router.get('/google/callback', passport.authenticate('google', {
@@ -16,12 +15,12 @@ router.get('/google/callback', passport.authenticate('google', {
   authInfo: true
 }))
 
-//Autentificacion con JWT, Email y Password
+// Autentificacion con JWT, Email y Password
 router.post('/register', registerUser)
 
 router.post('/login', loginUser)
 
-//Probando ruta de autentificacion con JWT
+// Probando ruta de autentificacion con JWT
 router.get('/protected', verifyToken, (_, res) => {
   res.status(200).send({ message: 'Ruta protegida' })
 })
@@ -33,18 +32,16 @@ router.get('/failure', (_, res) => {
   res.send('Ocurrió un error al loguear con Google')
 })
 
-
-//Logout
+// Logout
 router.get('/logout', async (req, res) => {
   try {
-
-    //Limpiando la sesion del usuario
+    // Limpiando la sesion del usuario
     req.logout(function (err) {
-      if (err) { return err; }
-    });
-    //Limpiando las cookies
-    res.clearCookie('connect.sid');
-    res.clearCookie('token');
+      if (err) { return err }
+    })
+    // Limpiando las cookies
+    res.clearCookie('connect.sid')
+    res.clearCookie('token')
 
     return res.status(200).send({ ok: true, message: 'Sesión cerrada con éxito' })
   } catch (error) {
@@ -52,4 +49,4 @@ router.get('/logout', async (req, res) => {
     return res.status(500).send({ ok: false, error: 'Error interno' })
   }
 })
-export default router;
+export default router

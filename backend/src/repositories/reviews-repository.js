@@ -1,14 +1,12 @@
-import { ValidationsRepository } from "./validations-repository.js"
-import initModels from "../database/models/init-models.js"
-import { connection } from "../database/db-connection.js"
+import { ValidationsRepository } from './validations-repository.js'
+import initModels from '../database/models/init-models.js'
+import { connection } from '../database/db-connection.js'
 
 const { user_rating: UserRatingModel, user: UserModel } = initModels(connection)
 
 export class ReviewRepository {
-
-  static async getReviews(placeId) {
-
-    ValidationsRepository.validatePlaceId(placeId);
+  static async getReviews (placeId) {
+    ValidationsRepository.validatePlaceId(placeId)
 
     const reviews = await UserRatingModel.findAll({
       include: [{
@@ -19,26 +17,26 @@ export class ReviewRepository {
       }],
       where: {
         place_id: placeId
-      },
+      }
 
     })
 
     return reviews
   }
 
-  static async createReview(placeId, userId, rating, comment) {
+  static async createReview (placeId, userId, rating, comment) {
     ValidationsRepository.validatePlaceId(placeId)
     ValidationsRepository.validateRating(rating)
     ValidationsRepository.validateComment(comment)
 
-    //Si un usuario ya habia votado previamente, se actualiza la calificacion
+    // Si un usuario ya habia votado previamente, se actualiza la calificacion
     const [userRating] = await UserRatingModel.findAll({
       where: {
         place_id: placeId,
         user_id: userId
       }
     })
-    
+
     if (userRating) {
       await UserRatingModel.update({
         rating,

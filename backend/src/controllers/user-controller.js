@@ -1,8 +1,8 @@
-import { AuthRepository } from "../repositories/auth-repository.js"
-import { ValidationError } from "../repositories/error-repository.js"
+import { AuthRepository } from '../repositories/auth-repository.js'
+import { ValidationError } from '../repositories/error-repository.js'
 import jwt from 'jsonwebtoken'
 
-export async function registerUser(req, res) {
+export async function registerUser (req, res) {
   const { username, email, password, confirmPassword } = req.body
   try {
     const response = await AuthRepository.createUser({ username, email, password, confirmPassword })
@@ -21,7 +21,7 @@ export async function registerUser(req, res) {
   }
 }
 
-export async function loginUser(req, res) {
+export async function loginUser (req, res) {
   const { email, password } = req.body
   try {
     const response = await AuthRepository.loginUser({ email, password })
@@ -43,22 +43,21 @@ export async function loginUser(req, res) {
   }
 }
 
-export async function loginRefresh(req, res) {
+export async function loginRefresh (req, res) {
   try {
-
     const token = req.header('x-token')
 
-    if (req.user) {      
+    if (req.user) {
       const token = jwt.sign({ id: req.user.id, username: req.user.displayName }, process.env.JWT_SECRET, { expiresIn: '24h' })
-      return res.
-        cookie('token', token, {
+      return res
+        .cookie('token', token, {
           httpOnly: true,
           sameSite: 'strict',
           maxAge: 1000 * 60 * 60
         })
         .status(200).json({
           ok: true,
-          message: "Usuario logueado con éxito",
+          message: 'Usuario logueado con éxito',
           user: req.user,
           token
         })
@@ -67,15 +66,15 @@ export async function loginRefresh(req, res) {
       const payload = jwt.verify(token, process.env.JWT_SECRET)
       const { id } = payload
       const { user } = await AuthRepository.renewToken(id)
-      return res.
-        cookie('token', token, {
+      return res
+        .cookie('token', token, {
           httpOnly: true,
           sameSite: 'strict',
           maxAge: 1000 * 60 * 60
         })
         .status(200).json({
           ok: true,
-          message: "Usuario logueado con éxito",
+          message: 'Usuario logueado con éxito',
           token,
           user: { id: user.dataValues.id, displayName: user.dataValues.name, email: user.dataValues.email }
         })

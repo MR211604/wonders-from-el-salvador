@@ -22,7 +22,7 @@ export function useFetchPlaces() {
           setPlaces(data.places);
           setPages(data.pagination.totalPage);
         } catch (error) {
-          setError('Error al obtener los datos')
+          setError(error)
         } finally {
           setLoading(false)
         }
