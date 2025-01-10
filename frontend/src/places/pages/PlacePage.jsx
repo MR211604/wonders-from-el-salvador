@@ -1,31 +1,33 @@
-import { useContext, useMemo, useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
-import { snakeToNormal } from "../../helpers/snakeToNormal";
+import { useContext, useEffect, useState } from "react";
 import { TbMapSearch } from "react-icons/tb";
-import { NavBar } from "../../ui";
-import { StarComponent } from "../components/StarComponent";
+import { useParams } from "react-router-dom";
 import { AuthContext } from "../../auth/provider/AuthProvider";
 import { fetchWithToken } from "../../helpers/fetch";
+import { snakeToNormal } from "../../helpers/snakeToNormal";
+import { NavBar } from "../../ui";
+import { StarComponent } from "../components/StarComponent";
 
 
 export function PlacePage() {
   const { auth } = useContext(AuthContext)
   const { place_id } = useParams();
 
+  
   const [placeData, setPlaceData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null)
   const [editRatingId, setEditRatingId] = useState(null);
-
+  
   //Rating promedio general
   const averageRating = placeData?.user_ratings?.reduce((sum, rating) => sum + rating.rating, 0) / placeData?.user_ratings?.length;
   const avgRating = (averageRating % 1) >= 0.6 ? Math.ceil(averageRating) : Math.floor(averageRating);
-
+  
   const [editComment, setEditComment] = useState(undefined)
   const [editRating, setEditRating] = useState(0)
 
+  
   useEffect(() => {
-    const fetchHeroById = async () => {
+    const fetchPlaceById = async () => {
       try {
         const response = await fetch(`http://localhost:3000/api/places/getPlaceById/${place_id}`);
         const data = await response.json();
@@ -39,7 +41,7 @@ export function PlacePage() {
         setLoading(false)
       }
     }
-    fetchHeroById()
+    fetchPlaceById()
   }, [place_id, editRatingId])
 
 
@@ -64,10 +66,12 @@ export function PlacePage() {
       try {
         await fetchWithToken('reviews/createReview', { placeId: place_id, userId: user_id, rating: editRating > 0 ? editRating : rating, comment: editComment ? editComment : comment }, 'POST')
         setEditRatingId(null)
+        setEditComment(undefined)
       } catch (error) {
         setError(error)
       }
-    } else {
+    } 
+    else {
       setEditRatingId(id)
     }
   }
@@ -111,7 +115,7 @@ export function PlacePage() {
                       <StarComponent interactive={editRatingId === rating.id} rating={rating.rating} editRating={editRating} comment={rating.comment} editComment={editComment} handleRating={handleRatingChange} handleComment={handleComment} /> </span>
                     {
                       auth && auth.name === rating.user.name &&
-                      <a className="text-teal-700 hover:underline" href="#" onClick={() => handleRating(rating)}>
+                      <a className="text-teal-700 hover:underline cursor-pointer" onClick={() => handleRating(rating)}>  
                         {rating.id === editRatingId ? `Realizar cambios` : `Editar valoración`}
                       </a>
                     }

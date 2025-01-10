@@ -19,6 +19,7 @@ export const AppRouter = () => {
   if (auth.checking) {
     return null
   }
+  
   return (
     <>
       <Routes>

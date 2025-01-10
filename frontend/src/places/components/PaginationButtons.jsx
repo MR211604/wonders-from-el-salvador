@@ -34,7 +34,7 @@ export function PaginationButtons({ setCurrentPage, currentPage, totalPages }) {
         containerClassName='flex items-center justify-center mt-8 mb-4'
         pageClassName='font-bold cursor-pointer block hover:bg-slate-200 w-10 h-10 flex items-center justify-center rounded-md mx-2 transition duration-300 ease-in-out'
         activeClassName='bg-slate-300 text-black'
-        forcePage={currentPage - 1}
+        forcePage={currentPage - 1}        
         pageRangeDisplayed={5}
         pageCount={Math.ceil(totalPages)}
         onPageChange={handleClickPage}
